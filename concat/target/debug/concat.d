@@ -1,0 +1,1 @@
+/Users/upalc/Documents/rustcontracts/rust-apps/concat/target/debug/concat: /Users/upalc/Documents/rustcontracts/rust-apps/concat/src/args.rs /Users/upalc/Documents/rustcontracts/rust-apps/concat/src/main.rs
