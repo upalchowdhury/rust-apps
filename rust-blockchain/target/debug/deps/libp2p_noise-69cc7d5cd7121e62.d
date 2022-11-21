@@ -1,0 +1,15 @@
+/Users/upalc/Documents/rustcontracts/rust-apps/rust-blockchain/target/debug/deps/libp2p_noise-69cc7d5cd7121e62.rmeta: /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/lib.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/error.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/io.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/io/framed.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/io/handshake.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/protocol.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/protocol/x25519.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/protocol/x25519_spec.rs /Users/upalc/Documents/rustcontracts/rust-apps/rust-blockchain/target/debug/build/libp2p-noise-36d1d3b315125f74/out/payload.proto.rs
+
+/Users/upalc/Documents/rustcontracts/rust-apps/rust-blockchain/target/debug/deps/libp2p_noise-69cc7d5cd7121e62.d: /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/lib.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/error.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/io.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/io/framed.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/io/handshake.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/protocol.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/protocol/x25519.rs /Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/protocol/x25519_spec.rs /Users/upalc/Documents/rustcontracts/rust-apps/rust-blockchain/target/debug/build/libp2p-noise-36d1d3b315125f74/out/payload.proto.rs
+
+/Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/lib.rs:
+/Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/error.rs:
+/Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/io.rs:
+/Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/io/framed.rs:
+/Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/io/handshake.rs:
+/Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/protocol.rs:
+/Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/protocol/x25519.rs:
+/Users/upalc/.cargo/registry/src/github.com-1ecc6299db9ec823/libp2p-noise-0.32.0/src/protocol/x25519_spec.rs:
+/Users/upalc/Documents/rustcontracts/rust-apps/rust-blockchain/target/debug/build/libp2p-noise-36d1d3b315125f74/out/payload.proto.rs:
+
+# env-dep:OUT_DIR=/Users/upalc/Documents/rustcontracts/rust-apps/rust-blockchain/target/debug/build/libp2p-noise-36d1d3b315125f74/out
