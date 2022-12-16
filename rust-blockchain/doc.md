@@ -43,3 +43,9 @@ Finally, if it’s a Block that’s incoming, that means someone else mined a bl
 
 
 
+ We ask other nodes on startup for their chain and, if its longer than ours, use theirs. This is our simplistic consensus criteria.
+
+So then we’d be sent both blocks. We would validate them and add the first one coming in, but the second one would be thrown out during validation since we already have a block with ID 6.
+
+This is an inherent problem in a system such as this and the reason there needs to be a consensus algorithm between nodes to decide which blocks (i.e., which chain) to agree on and use. This happens if we ask another node for its chain to determine whether it’s “better” (according to our consensus algorithm) than our local one.
+

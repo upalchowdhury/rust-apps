@@ -1,18 +1,15 @@
-; ModuleID = 'probe2.21d05142-cgu.0'
-source_filename = "probe2.21d05142-cgu.0"
+; ModuleID = 'probe2.30422f22-cgu.0'
+source_filename = "probe2.30422f22-cgu.0"
 target datalayout = "e-m:o-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-apple-macosx10.7.0"
 
 ; probe2::probe
 ; Function Attrs: uwtable
-define void @_ZN6probe25probe17haf9f54eabafe82d5E() unnamed_addr #0 {
+define void @_ZN6probe25probe17hfe8ecef1648fac60E() unnamed_addr #0 {
 start:
   %0 = alloca i32, align 4
   store i32 -2147483648, ptr %0, align 4
   %1 = load i32, ptr %0, align 4
-  br label %bb1
-
-bb1:                                              ; preds = %start
   ret void
 }
 

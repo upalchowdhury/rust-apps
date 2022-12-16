@@ -1,11 +1,11 @@
-; ModuleID = 'probe1.6901998d-cgu.0'
-source_filename = "probe1.6901998d-cgu.0"
+; ModuleID = 'probe1.488c4a75-cgu.0'
+source_filename = "probe1.488c4a75-cgu.0"
 target datalayout = "e-m:o-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-apple-macosx10.7.0"
 
 %"core::fmt::Arguments<'_>" = type { { ptr, i64 }, { ptr, i64 }, { ptr, i64 } }
 %"alloc::string::String" = type { %"alloc::vec::Vec<u8>" }
-%"alloc::vec::Vec<u8>" = type { { ptr, i64 }, i64 }
+%"alloc::vec::Vec<u8>" = type { { i64, ptr }, i64 }
 %"core::ptr::metadata::PtrComponents<u8>" = type { ptr, {} }
 %"core::ptr::metadata::PtrRepr<u8>" = type { [1 x i64] }
 %"core::ptr::metadata::PtrRepr<[u8]>" = type { [2 x i64] }
@@ -15,19 +15,19 @@ target triple = "x86_64-apple-macosx10.7.0"
 @alloc3 = private unnamed_addr constant <{}> zeroinitializer, align 8
 @alloc9 = private unnamed_addr constant <{ [12 x i8] }> <{ [12 x i8] c"invalid args" }>, align 1
 @alloc10 = private unnamed_addr constant <{ ptr, [8 x i8] }> <{ ptr @alloc9, [8 x i8] c"\0C\00\00\00\00\00\00\00" }>, align 8
-@alloc84 = private unnamed_addr constant <{ [75 x i8] }> <{ [75 x i8] c"/rustc/42325c525b9d3885847a3f803abe53c562d289da/library/core/src/fmt/mod.rs" }>, align 1
+@alloc84 = private unnamed_addr constant <{ [75 x i8] }> <{ [75 x i8] c"/rustc/23415176968e81e0aac92d0218612a89c4e68a82/library/core/src/fmt/mod.rs" }>, align 1
 @alloc85 = private unnamed_addr constant <{ ptr, [16 x i8] }> <{ ptr @alloc84, [16 x i8] c"K\00\00\00\00\00\00\00\8C\01\00\00\0D\00\00\00" }>, align 8
-@alloc103 = private unnamed_addr constant <{ [80 x i8] }> <{ [80 x i8] c"/rustc/42325c525b9d3885847a3f803abe53c562d289da/library/core/src/alloc/layout.rs" }>, align 1
-@alloc104 = private unnamed_addr constant <{ ptr, [16 x i8] }> <{ ptr @alloc103, [16 x i8] c"P\00\00\00\00\00\00\00\B6\01\00\00)\00\00\00" }>, align 8
+@alloc103 = private unnamed_addr constant <{ [80 x i8] }> <{ [80 x i8] c"/rustc/23415176968e81e0aac92d0218612a89c4e68a82/library/core/src/alloc/layout.rs" }>, align 1
+@alloc104 = private unnamed_addr constant <{ ptr, [16 x i8] }> <{ ptr @alloc103, [16 x i8] c"P\00\00\00\00\00\00\00\C4\01\00\00)\00\00\00" }>, align 8
 @str.0 = internal constant [25 x i8] c"attempt to divide by zero"
-@alloc105 = private unnamed_addr constant <{ [76 x i8] }> <{ [76 x i8] c"/rustc/42325c525b9d3885847a3f803abe53c562d289da/library/alloc/src/raw_vec.rs" }>, align 1
+@alloc105 = private unnamed_addr constant <{ [76 x i8] }> <{ [76 x i8] c"/rustc/23415176968e81e0aac92d0218612a89c4e68a82/library/alloc/src/raw_vec.rs" }>, align 1
 @alloc106 = private unnamed_addr constant <{ ptr, [16 x i8] }> <{ ptr @alloc105, [16 x i8] c"L\00\00\00\00\00\00\00\F7\00\00\00;\00\00\00" }>, align 8
 @alloc4 = private unnamed_addr constant <{ ptr, [8 x i8] }> <{ ptr @alloc3, [8 x i8] zeroinitializer }>, align 8
 @alloc6 = private unnamed_addr constant <{ [8 x i8] }> zeroinitializer, align 8
 
 ; <core::ptr::non_null::NonNull<T> as core::convert::From<core::ptr::unique::Unique<T>>>::from
 ; Function Attrs: inlinehint uwtable
-define ptr @"_ZN119_$LT$core..ptr..non_null..NonNull$LT$T$GT$$u20$as$u20$core..convert..From$LT$core..ptr..unique..Unique$LT$T$GT$$GT$$GT$4from17he983245c24955a58E"(ptr %unique) unnamed_addr #0 {
+define ptr @"_ZN119_$LT$core..ptr..non_null..NonNull$LT$T$GT$$u20$as$u20$core..convert..From$LT$core..ptr..unique..Unique$LT$T$GT$$GT$$GT$4from17h20fe4d386d48fe9aE"(ptr %unique) unnamed_addr #0 {
 start:
   %0 = alloca ptr, align 8
   store ptr %unique, ptr %0, align 8
@@ -37,21 +37,15 @@ start:
 
 ; core::fmt::ArgumentV1::new_lower_exp
 ; Function Attrs: inlinehint uwtable
-define { ptr, ptr } @_ZN4core3fmt10ArgumentV113new_lower_exp17hdf38f6a39318ccefE(ptr align 8 %x) unnamed_addr #0 {
+define { ptr, ptr } @_ZN4core3fmt10ArgumentV113new_lower_exp17h81ace772236e0cc6E(ptr align 8 %x) unnamed_addr #0 {
 start:
   %0 = alloca ptr, align 8
   %1 = alloca ptr, align 8
   %2 = alloca { ptr, ptr }, align 8
-  store ptr @"_ZN4core3fmt3num3imp55_$LT$impl$u20$core..fmt..LowerExp$u20$for$u20$isize$GT$3fmt17hed033f4b1998ee94E", ptr %1, align 8
+  store ptr @"_ZN4core3fmt3num3imp55_$LT$impl$u20$core..fmt..LowerExp$u20$for$u20$isize$GT$3fmt17h1d1adbde218b2036E", ptr %1, align 8
   %_4 = load ptr, ptr %1, align 8, !nonnull !1, !noundef !1
-  br label %bb1
-
-bb1:                                              ; preds = %start
   store ptr %x, ptr %0, align 8
   %_6 = load ptr, ptr %0, align 8, !nonnull !1, !align !2, !noundef !1
-  br label %bb2
-
-bb2:                                              ; preds = %bb1
   store ptr %_6, ptr %2, align 8
   %3 = getelementptr inbounds { ptr, ptr }, ptr %2, i32 0, i32 1
   store ptr %_4, ptr %3, align 8
@@ -66,49 +60,50 @@ bb2:                                              ; preds = %bb1
 
 ; core::fmt::Arguments::as_str
 ; Function Attrs: inlinehint uwtable
-define internal { ptr, i64 } @_ZN4core3fmt9Arguments6as_str17h5d762534d7d61bbbE(ptr align 8 %self) unnamed_addr #0 {
+define internal { ptr, i64 } @_ZN4core3fmt9Arguments6as_str17h8ed1097cdc1ea708E(ptr align 8 %self) unnamed_addr #0 {
 start:
   %_2 = alloca { { ptr, i64 }, { ptr, i64 } }, align 8
   %0 = alloca { ptr, i64 }, align 8
-  %1 = getelementptr inbounds { ptr, i64 }, ptr %self, i32 0, i32 0
-  %_3.0 = load ptr, ptr %1, align 8, !nonnull !1, !align !3, !noundef !1
-  %2 = getelementptr inbounds { ptr, i64 }, ptr %self, i32 0, i32 1
-  %_3.1 = load i64, ptr %2, align 8
-  %3 = getelementptr inbounds %"core::fmt::Arguments<'_>", ptr %self, i32 0, i32 2
-  %4 = getelementptr inbounds { ptr, i64 }, ptr %3, i32 0, i32 0
-  %_4.0 = load ptr, ptr %4, align 8, !nonnull !1, !align !3, !noundef !1
-  %5 = getelementptr inbounds { ptr, i64 }, ptr %3, i32 0, i32 1
-  %_4.1 = load i64, ptr %5, align 8
-  %6 = getelementptr inbounds { ptr, i64 }, ptr %_2, i32 0, i32 0
-  store ptr %_3.0, ptr %6, align 8
-  %7 = getelementptr inbounds { ptr, i64 }, ptr %_2, i32 0, i32 1
-  store i64 %_3.1, ptr %7, align 8
-  %8 = getelementptr inbounds { { ptr, i64 }, { ptr, i64 } }, ptr %_2, i32 0, i32 1
-  %9 = getelementptr inbounds { ptr, i64 }, ptr %8, i32 0, i32 0
-  store ptr %_4.0, ptr %9, align 8
-  %10 = getelementptr inbounds { ptr, i64 }, ptr %8, i32 0, i32 1
-  store i64 %_4.1, ptr %10, align 8
-  %11 = getelementptr inbounds { ptr, i64 }, ptr %_2, i32 0, i32 0
-  %_21.0 = load ptr, ptr %11, align 8, !nonnull !1, !align !3, !noundef !1
-  %12 = getelementptr inbounds { ptr, i64 }, ptr %_2, i32 0, i32 1
-  %_21.1 = load i64, ptr %12, align 8
+  %1 = getelementptr inbounds %"core::fmt::Arguments<'_>", ptr %self, i32 0, i32 1
+  %2 = getelementptr inbounds { ptr, i64 }, ptr %1, i32 0, i32 0
+  %_3.0 = load ptr, ptr %2, align 8, !nonnull !1, !align !3, !noundef !1
+  %3 = getelementptr inbounds { ptr, i64 }, ptr %1, i32 0, i32 1
+  %_3.1 = load i64, ptr %3, align 8
+  %4 = getelementptr inbounds %"core::fmt::Arguments<'_>", ptr %self, i32 0, i32 2
+  %5 = getelementptr inbounds { ptr, i64 }, ptr %4, i32 0, i32 0
+  %_4.0 = load ptr, ptr %5, align 8, !nonnull !1, !align !3, !noundef !1
+  %6 = getelementptr inbounds { ptr, i64 }, ptr %4, i32 0, i32 1
+  %_4.1 = load i64, ptr %6, align 8
+  %7 = getelementptr inbounds { ptr, i64 }, ptr %_2, i32 0, i32 0
+  store ptr %_3.0, ptr %7, align 8
+  %8 = getelementptr inbounds { ptr, i64 }, ptr %_2, i32 0, i32 1
+  store i64 %_3.1, ptr %8, align 8
+  %9 = getelementptr inbounds { { ptr, i64 }, { ptr, i64 } }, ptr %_2, i32 0, i32 1
+  %10 = getelementptr inbounds { ptr, i64 }, ptr %9, i32 0, i32 0
+  store ptr %_4.0, ptr %10, align 8
+  %11 = getelementptr inbounds { ptr, i64 }, ptr %9, i32 0, i32 1
+  store i64 %_4.1, ptr %11, align 8
+  %12 = getelementptr inbounds { ptr, i64 }, ptr %_2, i32 0, i32 0
+  %_21.0 = load ptr, ptr %12, align 8, !nonnull !1, !align !3, !noundef !1
+  %13 = getelementptr inbounds { ptr, i64 }, ptr %_2, i32 0, i32 1
+  %_21.1 = load i64, ptr %13, align 8
   %_16 = icmp eq i64 %_21.1, 0
   br i1 %_16, label %bb1, label %bb3
 
 bb3:                                              ; preds = %start
-  %13 = getelementptr inbounds { ptr, i64 }, ptr %_2, i32 0, i32 0
-  %_23.0 = load ptr, ptr %13, align 8, !nonnull !1, !align !3, !noundef !1
-  %14 = getelementptr inbounds { ptr, i64 }, ptr %_2, i32 0, i32 1
-  %_23.1 = load i64, ptr %14, align 8
+  %14 = getelementptr inbounds { ptr, i64 }, ptr %_2, i32 0, i32 0
+  %_23.0 = load ptr, ptr %14, align 8, !nonnull !1, !align !3, !noundef !1
+  %15 = getelementptr inbounds { ptr, i64 }, ptr %_2, i32 0, i32 1
+  %_23.1 = load i64, ptr %15, align 8
   %_13 = icmp eq i64 %_23.1, 1
   br i1 %_13, label %bb4, label %bb2
 
 bb1:                                              ; preds = %start
-  %15 = getelementptr inbounds { { ptr, i64 }, { ptr, i64 } }, ptr %_2, i32 0, i32 1
-  %16 = getelementptr inbounds { ptr, i64 }, ptr %15, i32 0, i32 0
-  %_22.0 = load ptr, ptr %16, align 8, !nonnull !1, !align !3, !noundef !1
-  %17 = getelementptr inbounds { ptr, i64 }, ptr %15, i32 0, i32 1
-  %_22.1 = load i64, ptr %17, align 8
+  %16 = getelementptr inbounds { { ptr, i64 }, { ptr, i64 } }, ptr %_2, i32 0, i32 1
+  %17 = getelementptr inbounds { ptr, i64 }, ptr %16, i32 0, i32 0
+  %_22.0 = load ptr, ptr %17, align 8, !nonnull !1, !align !3, !noundef !1
+  %18 = getelementptr inbounds { ptr, i64 }, ptr %16, i32 0, i32 1
+  %_22.1 = load i64, ptr %18, align 8
   %_7 = icmp eq i64 %_22.1, 0
   br i1 %_7, label %bb5, label %bb2
 
@@ -117,50 +112,50 @@ bb2:                                              ; preds = %bb4, %bb3, %bb1
   br label %bb7
 
 bb5:                                              ; preds = %bb1
-  %18 = getelementptr inbounds { ptr, i64 }, ptr %0, i32 0, i32 0
-  store ptr @alloc3, ptr %18, align 8
-  %19 = getelementptr inbounds { ptr, i64 }, ptr %0, i32 0, i32 1
-  store i64 0, ptr %19, align 8
+  %19 = getelementptr inbounds { ptr, i64 }, ptr %0, i32 0, i32 0
+  store ptr @alloc3, ptr %19, align 8
+  %20 = getelementptr inbounds { ptr, i64 }, ptr %0, i32 0, i32 1
+  store i64 0, ptr %20, align 8
   br label %bb7
 
 bb7:                                              ; preds = %bb2, %bb6, %bb5
-  %20 = getelementptr inbounds { ptr, i64 }, ptr %0, i32 0, i32 0
-  %21 = load ptr, ptr %20, align 8, !align !2
-  %22 = getelementptr inbounds { ptr, i64 }, ptr %0, i32 0, i32 1
-  %23 = load i64, ptr %22, align 8
-  %24 = insertvalue { ptr, i64 } undef, ptr %21, 0
-  %25 = insertvalue { ptr, i64 } %24, i64 %23, 1
-  ret { ptr, i64 } %25
+  %21 = getelementptr inbounds { ptr, i64 }, ptr %0, i32 0, i32 0
+  %22 = load ptr, ptr %21, align 8, !align !2
+  %23 = getelementptr inbounds { ptr, i64 }, ptr %0, i32 0, i32 1
+  %24 = load i64, ptr %23, align 8
+  %25 = insertvalue { ptr, i64 } undef, ptr %22, 0
+  %26 = insertvalue { ptr, i64 } %25, i64 %24, 1
+  ret { ptr, i64 } %26
 
 bb4:                                              ; preds = %bb3
-  %26 = getelementptr inbounds { { ptr, i64 }, { ptr, i64 } }, ptr %_2, i32 0, i32 1
-  %27 = getelementptr inbounds { ptr, i64 }, ptr %26, i32 0, i32 0
-  %_24.0 = load ptr, ptr %27, align 8, !nonnull !1, !align !3, !noundef !1
-  %28 = getelementptr inbounds { ptr, i64 }, ptr %26, i32 0, i32 1
-  %_24.1 = load i64, ptr %28, align 8
+  %27 = getelementptr inbounds { { ptr, i64 }, { ptr, i64 } }, ptr %_2, i32 0, i32 1
+  %28 = getelementptr inbounds { ptr, i64 }, ptr %27, i32 0, i32 0
+  %_24.0 = load ptr, ptr %28, align 8, !nonnull !1, !align !3, !noundef !1
+  %29 = getelementptr inbounds { ptr, i64 }, ptr %27, i32 0, i32 1
+  %_24.1 = load i64, ptr %29, align 8
   %_10 = icmp eq i64 %_24.1, 0
   br i1 %_10, label %bb6, label %bb2
 
 bb6:                                              ; preds = %bb4
-  %29 = getelementptr inbounds { ptr, i64 }, ptr %_2, i32 0, i32 0
-  %_25.0 = load ptr, ptr %29, align 8, !nonnull !1, !align !3, !noundef !1
-  %30 = getelementptr inbounds { ptr, i64 }, ptr %_2, i32 0, i32 1
-  %_25.1 = load i64, ptr %30, align 8
+  %30 = getelementptr inbounds { ptr, i64 }, ptr %_2, i32 0, i32 0
+  %_25.0 = load ptr, ptr %30, align 8, !nonnull !1, !align !3, !noundef !1
+  %31 = getelementptr inbounds { ptr, i64 }, ptr %_2, i32 0, i32 1
+  %_25.1 = load i64, ptr %31, align 8
   %s = getelementptr inbounds [0 x { ptr, i64 }], ptr %_25.0, i64 0, i64 0
-  %31 = getelementptr inbounds { ptr, i64 }, ptr %s, i32 0, i32 0
-  %_26.0 = load ptr, ptr %31, align 8, !nonnull !1, !align !2, !noundef !1
-  %32 = getelementptr inbounds { ptr, i64 }, ptr %s, i32 0, i32 1
-  %_26.1 = load i64, ptr %32, align 8
-  %33 = getelementptr inbounds { ptr, i64 }, ptr %0, i32 0, i32 0
-  store ptr %_26.0, ptr %33, align 8
-  %34 = getelementptr inbounds { ptr, i64 }, ptr %0, i32 0, i32 1
-  store i64 %_26.1, ptr %34, align 8
+  %32 = getelementptr inbounds { ptr, i64 }, ptr %s, i32 0, i32 0
+  %_26.0 = load ptr, ptr %32, align 8, !nonnull !1, !align !2, !noundef !1
+  %33 = getelementptr inbounds { ptr, i64 }, ptr %s, i32 0, i32 1
+  %_26.1 = load i64, ptr %33, align 8
+  %34 = getelementptr inbounds { ptr, i64 }, ptr %0, i32 0, i32 0
+  store ptr %_26.0, ptr %34, align 8
+  %35 = getelementptr inbounds { ptr, i64 }, ptr %0, i32 0, i32 1
+  store i64 %_26.1, ptr %35, align 8
   br label %bb7
 }
 
 ; core::fmt::Arguments::new_v1
 ; Function Attrs: inlinehint uwtable
-define internal void @_ZN4core3fmt9Arguments6new_v117hec785e9687d1aeafE(ptr sret(%"core::fmt::Arguments<'_>") %0, ptr align 8 %pieces.0, i64 %pieces.1, ptr align 8 %args.0, i64 %args.1) unnamed_addr #0 {
+define internal void @_ZN4core3fmt9Arguments6new_v117h54897e25400540adE(ptr sret(%"core::fmt::Arguments<'_>") %0, ptr align 8 %pieces.0, i64 %pieces.1, ptr align 8 %args.0, i64 %args.1) unnamed_addr #0 {
 start:
   %_24 = alloca { ptr, i64 }, align 8
   %_16 = alloca %"core::fmt::Arguments<'_>", align 8
@@ -186,18 +181,18 @@ bb3:                                              ; preds = %bb2, %bb1
 
 bb6:                                              ; preds = %bb3
   store ptr null, ptr %_24, align 8
-  %4 = getelementptr inbounds { ptr, i64 }, ptr %0, i32 0, i32 0
-  store ptr %pieces.0, ptr %4, align 8
-  %5 = getelementptr inbounds { ptr, i64 }, ptr %0, i32 0, i32 1
-  store i64 %pieces.1, ptr %5, align 8
-  %6 = getelementptr inbounds %"core::fmt::Arguments<'_>", ptr %0, i32 0, i32 1
+  %4 = getelementptr inbounds %"core::fmt::Arguments<'_>", ptr %0, i32 0, i32 1
+  %5 = getelementptr inbounds { ptr, i64 }, ptr %4, i32 0, i32 0
+  store ptr %pieces.0, ptr %5, align 8
+  %6 = getelementptr inbounds { ptr, i64 }, ptr %4, i32 0, i32 1
+  store i64 %pieces.1, ptr %6, align 8
   %7 = getelementptr inbounds { ptr, i64 }, ptr %_24, i32 0, i32 0
   %8 = load ptr, ptr %7, align 8, !align !3
   %9 = getelementptr inbounds { ptr, i64 }, ptr %_24, i32 0, i32 1
   %10 = load i64, ptr %9, align 8
-  %11 = getelementptr inbounds { ptr, i64 }, ptr %6, i32 0, i32 0
+  %11 = getelementptr inbounds { ptr, i64 }, ptr %0, i32 0, i32 0
   store ptr %8, ptr %11, align 8
-  %12 = getelementptr inbounds { ptr, i64 }, ptr %6, i32 0, i32 1
+  %12 = getelementptr inbounds { ptr, i64 }, ptr %0, i32 0, i32 1
   store i64 %10, ptr %12, align 8
   %13 = getelementptr inbounds %"core::fmt::Arguments<'_>", ptr %0, i32 0, i32 2
   %14 = getelementptr inbounds { ptr, i64 }, ptr %13, i32 0, i32 0
@@ -208,18 +203,15 @@ bb6:                                              ; preds = %bb3
 
 bb4:                                              ; preds = %bb3
 ; call core::fmt::Arguments::new_v1
-  call void @_ZN4core3fmt9Arguments6new_v117hec785e9687d1aeafE(ptr sret(%"core::fmt::Arguments<'_>") %_16, ptr align 8 @alloc10, i64 1, ptr align 8 @alloc3, i64 0)
-  br label %bb5
-
-bb5:                                              ; preds = %bb4
+  call void @_ZN4core3fmt9Arguments6new_v117h54897e25400540adE(ptr sret(%"core::fmt::Arguments<'_>") %_16, ptr align 8 @alloc10, i64 1, ptr align 8 @alloc3, i64 0)
 ; call core::panicking::panic_fmt
-  call void @_ZN4core9panicking9panic_fmt17h58b5b343cb8247a1E(ptr %_16, ptr align 8 @alloc85) #13
+  call void @_ZN4core9panicking9panic_fmt17h360a460986665a92E(ptr %_16, ptr align 8 @alloc85) #13
   unreachable
 }
 
 ; core::ops::function::FnOnce::call_once
 ; Function Attrs: inlinehint uwtable
-define internal void @_ZN4core3ops8function6FnOnce9call_once17h9fb134ba3b1debceE(ptr sret(%"alloc::string::String") %0, ptr align 1 %1, i64 %2) unnamed_addr #0 {
+define internal void @_ZN4core3ops8function6FnOnce9call_once17hb7c1376be4716d4cE(ptr sret(%"alloc::string::String") %0, ptr align 1 %1, i64 %2) unnamed_addr #0 {
 start:
   %_2 = alloca { ptr, i64 }, align 8
   %3 = getelementptr inbounds { ptr, i64 }, ptr %_2, i32 0, i32 0
@@ -231,37 +223,31 @@ start:
   %7 = getelementptr inbounds { ptr, i64 }, ptr %_2, i32 0, i32 1
   %8 = load i64, ptr %7, align 8
 ; call alloc::str::<impl alloc::borrow::ToOwned for str>::to_owned
-  call void @"_ZN5alloc3str56_$LT$impl$u20$alloc..borrow..ToOwned$u20$for$u20$str$GT$8to_owned17h82e4d5a698511b4aE"(ptr sret(%"alloc::string::String") %0, ptr align 1 %6, i64 %8)
-  br label %bb1
-
-bb1:                                              ; preds = %start
+  call void @"_ZN5alloc3str56_$LT$impl$u20$alloc..borrow..ToOwned$u20$for$u20$str$GT$8to_owned17hbdc51c8b64364b12E"(ptr sret(%"alloc::string::String") %0, ptr align 1 %6, i64 %8)
   ret void
 }
 
 ; core::ptr::drop_in_place<alloc::string::String>
 ; Function Attrs: uwtable
-define void @"_ZN4core3ptr42drop_in_place$LT$alloc..string..String$GT$17h20b0217781c968e6E"(ptr %_1) unnamed_addr #1 {
+define void @"_ZN4core3ptr42drop_in_place$LT$alloc..string..String$GT$17h8463d1610be08497E"(ptr %_1) unnamed_addr #1 {
 start:
 ; call core::ptr::drop_in_place<alloc::vec::Vec<u8>>
-  call void @"_ZN4core3ptr46drop_in_place$LT$alloc..vec..Vec$LT$u8$GT$$GT$17h9c4d631744f32ad6E"(ptr %_1)
-  br label %bb1
-
-bb1:                                              ; preds = %start
+  call void @"_ZN4core3ptr46drop_in_place$LT$alloc..vec..Vec$LT$u8$GT$$GT$17h69b801a17c028ebbE"(ptr %_1)
   ret void
 }
 
 ; core::ptr::drop_in_place<alloc::vec::Vec<u8>>
 ; Function Attrs: uwtable
-define void @"_ZN4core3ptr46drop_in_place$LT$alloc..vec..Vec$LT$u8$GT$$GT$17h9c4d631744f32ad6E"(ptr %_1) unnamed_addr #1 personality ptr @rust_eh_personality {
+define void @"_ZN4core3ptr46drop_in_place$LT$alloc..vec..Vec$LT$u8$GT$$GT$17h69b801a17c028ebbE"(ptr %_1) unnamed_addr #1 personality ptr @rust_eh_personality {
 start:
   %0 = alloca { ptr, i32 }, align 8
 ; invoke <alloc::vec::Vec<T,A> as core::ops::drop::Drop>::drop
-  invoke void @"_ZN70_$LT$alloc..vec..Vec$LT$T$C$A$GT$$u20$as$u20$core..ops..drop..Drop$GT$4drop17h2073511d2d92b55fE"(ptr align 8 %_1)
+  invoke void @"_ZN70_$LT$alloc..vec..Vec$LT$T$C$A$GT$$u20$as$u20$core..ops..drop..Drop$GT$4drop17hf4466f8ed3987765E"(ptr align 8 %_1)
           to label %bb4 unwind label %cleanup
 
 bb3:                                              ; preds = %cleanup
 ; invoke core::ptr::drop_in_place<alloc::raw_vec::RawVec<u8>>
-  invoke void @"_ZN4core3ptr53drop_in_place$LT$alloc..raw_vec..RawVec$LT$u8$GT$$GT$17h817b38286ea9f811E"(ptr %_1) #14
+  invoke void @"_ZN4core3ptr53drop_in_place$LT$alloc..raw_vec..RawVec$LT$u8$GT$$GT$17h0b3b8e1faba00a83E"(ptr %_1) #14
           to label %bb1 unwind label %abort
 
 cleanup:                                          ; preds = %start
@@ -277,14 +263,14 @@ cleanup:                                          ; preds = %start
 
 bb4:                                              ; preds = %start
 ; call core::ptr::drop_in_place<alloc::raw_vec::RawVec<u8>>
-  call void @"_ZN4core3ptr53drop_in_place$LT$alloc..raw_vec..RawVec$LT$u8$GT$$GT$17h817b38286ea9f811E"(ptr %_1)
-  br label %bb2
+  call void @"_ZN4core3ptr53drop_in_place$LT$alloc..raw_vec..RawVec$LT$u8$GT$$GT$17h0b3b8e1faba00a83E"(ptr %_1)
+  ret void
 
 abort:                                            ; preds = %bb3
   %6 = landingpad { ptr, i32 }
           cleanup
 ; call core::panicking::panic_no_unwind
-  call void @_ZN4core9panicking15panic_no_unwind17heeace36118a2ef48E() #15
+  call void @_ZN4core9panicking15panic_no_unwind17hb2af643378877ec4E() #15
   unreachable
 
 bb1:                                              ; preds = %bb3
@@ -294,26 +280,20 @@ bb1:                                              ; preds = %bb3
   %10 = insertvalue { ptr, i32 } undef, ptr %7, 0
   %11 = insertvalue { ptr, i32 } %10, i32 %9, 1
   resume { ptr, i32 } %11
-
-bb2:                                              ; preds = %bb4
-  ret void
 }
 
 ; core::ptr::drop_in_place<alloc::raw_vec::RawVec<u8>>
 ; Function Attrs: uwtable
-define void @"_ZN4core3ptr53drop_in_place$LT$alloc..raw_vec..RawVec$LT$u8$GT$$GT$17h817b38286ea9f811E"(ptr %_1) unnamed_addr #1 {
+define void @"_ZN4core3ptr53drop_in_place$LT$alloc..raw_vec..RawVec$LT$u8$GT$$GT$17h0b3b8e1faba00a83E"(ptr %_1) unnamed_addr #1 {
 start:
 ; call <alloc::raw_vec::RawVec<T,A> as core::ops::drop::Drop>::drop
-  call void @"_ZN77_$LT$alloc..raw_vec..RawVec$LT$T$C$A$GT$$u20$as$u20$core..ops..drop..Drop$GT$4drop17h0fced5f99a65019bE"(ptr align 8 %_1)
-  br label %bb1
-
-bb1:                                              ; preds = %start
+  call void @"_ZN77_$LT$alloc..raw_vec..RawVec$LT$T$C$A$GT$$u20$as$u20$core..ops..drop..Drop$GT$4drop17h1c07975c4a5822bcE"(ptr align 8 %_1)
   ret void
 }
 
 ; core::ptr::mut_ptr::<impl *mut T>::guaranteed_eq
 ; Function Attrs: inlinehint uwtable
-define i8 @"_ZN4core3ptr7mut_ptr31_$LT$impl$u20$$BP$mut$u20$T$GT$13guaranteed_eq17h495d992c23b0fb9fE"(ptr %self, ptr %other) unnamed_addr #0 {
+define i8 @"_ZN4core3ptr7mut_ptr31_$LT$impl$u20$$BP$mut$u20$T$GT$13guaranteed_eq17h8128fb38f083547bE"(ptr %self, ptr %other) unnamed_addr #0 {
 start:
   %0 = alloca i8, align 1
   %1 = alloca i8, align 1
@@ -321,17 +301,14 @@ start:
   %3 = zext i1 %2 to i8
   store i8 %3, ptr %0, align 1
   %_8 = load i8, ptr %0, align 1
-  br label %bb1
-
-bb1:                                              ; preds = %start
   %4 = icmp eq i8 %_8, 2
   br i1 %4, label %bb3, label %bb2
 
-bb3:                                              ; preds = %bb1
+bb3:                                              ; preds = %start
   store i8 2, ptr %1, align 1
   br label %bb4
 
-bb2:                                              ; preds = %bb1
+bb2:                                              ; preds = %start
   %_14 = icmp eq i8 %_8, 1
   %5 = zext i1 %_14 to i8
   store i8 %5, ptr %1, align 1
@@ -344,7 +321,7 @@ bb4:                                              ; preds = %bb3, %bb2
 
 ; core::ptr::mut_ptr::<impl *mut T>::is_null
 ; Function Attrs: inlinehint uwtable
-define zeroext i1 @"_ZN4core3ptr7mut_ptr31_$LT$impl$u20$$BP$mut$u20$T$GT$7is_null17h356abfa90d946053E"(ptr %self) unnamed_addr #0 {
+define zeroext i1 @"_ZN4core3ptr7mut_ptr31_$LT$impl$u20$$BP$mut$u20$T$GT$7is_null17h73f55a6e606b8ca3E"(ptr %self) unnamed_addr #0 {
 start:
   %0 = alloca ptr, align 8
   %_13 = alloca %"core::ptr::metadata::PtrComponents<u8>", align 8
@@ -353,29 +330,23 @@ start:
   %1 = alloca i8, align 1
   store i64 0, ptr %0, align 8
   %data_address = load ptr, ptr %0, align 8
-  br label %bb6
-
-bb6:                                              ; preds = %start
   store ptr %data_address, ptr %_13, align 8
   call void @llvm.memcpy.p0.p0.i64(ptr align 8 %_12, ptr align 8 %_13, i64 8, i1 false)
   %_5 = load ptr, ptr %_12, align 8
 ; call core::ptr::mut_ptr::<impl *mut T>::guaranteed_eq
-  %2 = call i8 @"_ZN4core3ptr7mut_ptr31_$LT$impl$u20$$BP$mut$u20$T$GT$13guaranteed_eq17h495d992c23b0fb9fE"(ptr %self, ptr %_5), !range !5
+  %2 = call i8 @"_ZN4core3ptr7mut_ptr31_$LT$impl$u20$$BP$mut$u20$T$GT$13guaranteed_eq17h8128fb38f083547bE"(ptr %self, ptr %_5), !range !5
   store i8 %2, ptr %_2, align 1
-  br label %bb1
-
-bb1:                                              ; preds = %bb6
   %3 = load i8, ptr %_2, align 1, !range !5, !noundef !1
   %4 = icmp eq i8 %3, 2
   %_6 = select i1 %4, i64 0, i64 1
   %5 = icmp eq i64 %_6, 0
   br i1 %5, label %bb4, label %bb2
 
-bb4:                                              ; preds = %bb1
+bb4:                                              ; preds = %start
   store i8 0, ptr %1, align 1
   br label %bb5
 
-bb2:                                              ; preds = %bb1
+bb2:                                              ; preds = %start
   %6 = load i8, ptr %_2, align 1, !range !4, !noundef !1
   %res = trunc i8 %6 to i1
   %7 = zext i1 %res to i8
@@ -393,23 +364,20 @@ bb5:                                              ; preds = %bb4, %bb2
 
 ; core::ptr::non_null::NonNull<T>::new
 ; Function Attrs: inlinehint uwtable
-define ptr @"_ZN4core3ptr8non_null16NonNull$LT$T$GT$3new17hb65f1a227b0fcd88E"(ptr %ptr) unnamed_addr #0 {
+define ptr @"_ZN4core3ptr8non_null16NonNull$LT$T$GT$3new17hb55c9a3b469d48bfE"(ptr %ptr) unnamed_addr #0 {
 start:
   %_5 = alloca ptr, align 8
   %0 = alloca ptr, align 8
 ; call core::ptr::mut_ptr::<impl *mut T>::is_null
-  %_3 = call zeroext i1 @"_ZN4core3ptr7mut_ptr31_$LT$impl$u20$$BP$mut$u20$T$GT$7is_null17h356abfa90d946053E"(ptr %ptr)
-  br label %bb1
-
-bb1:                                              ; preds = %start
+  %_3 = call zeroext i1 @"_ZN4core3ptr7mut_ptr31_$LT$impl$u20$$BP$mut$u20$T$GT$7is_null17h73f55a6e606b8ca3E"(ptr %ptr)
   %_2 = xor i1 %_3, true
   br i1 %_2, label %bb2, label %bb3
 
-bb3:                                              ; preds = %bb1
+bb3:                                              ; preds = %start
   store ptr null, ptr %0, align 8
   br label %bb4
 
-bb2:                                              ; preds = %bb1
+bb2:                                              ; preds = %start
   store ptr %ptr, ptr %_5, align 8
   %1 = load ptr, ptr %_5, align 8, !nonnull !1, !noundef !1
   store ptr %1, ptr %0, align 8
@@ -422,14 +390,14 @@ bb4:                                              ; preds = %bb3, %bb2
 
 ; core::hint::unreachable_unchecked
 ; Function Attrs: inlinehint noreturn uwtable
-define internal void @_ZN4core4hint21unreachable_unchecked17h06793c1f77b6834cE() unnamed_addr #2 {
+define internal void @_ZN4core4hint21unreachable_unchecked17hd75f53d2bce5fb2bE() unnamed_addr #2 {
 start:
   unreachable
 }
 
 ; core::alloc::layout::Layout::array::inner
 ; Function Attrs: inlinehint uwtable
-define internal { i64, i64 } @_ZN4core5alloc6layout6Layout5array5inner17h9bddee1d86b78746E(i64 %element_size, i64 %align, i64 %n) unnamed_addr #0 {
+define internal { i64, i64 } @_ZN4core5alloc6layout6Layout5array5inner17h75e47bc77aabb9ebE(i64 %element_size, i64 %align, i64 %n) unnamed_addr #0 {
 start:
   %0 = alloca i64, align 8
   %_28 = alloca i64, align 8
@@ -466,7 +434,7 @@ bb4:                                              ; preds = %bb2
 
 panic:                                            ; preds = %bb2
 ; call core::panicking::panic
-  call void @_ZN4core9panicking5panic17h5230efa25d74f7e9E(ptr align 1 @str.0, i64 25, ptr align 8 @alloc104) #13
+  call void @_ZN4core9panicking5panic17h4fcc8f4e1e044b62E(ptr align 1 @str.0, i64 25, ptr align 8 @alloc104) #13
   unreachable
 
 bb3:                                              ; preds = %bb1, %bb4
@@ -484,40 +452,37 @@ bb6:                                              ; preds = %bb3
   call void @llvm.assume(i1 %_31)
   store i64 %_29, ptr %0, align 8
   %_33 = load i64, ptr %0, align 8, !range !6, !noundef !1
-  br label %bb8
+  store i64 %array_size, ptr %_16, align 8
+  %7 = getelementptr inbounds { i64, i64 }, ptr %_16, i32 0, i32 1
+  store i64 %_33, ptr %7, align 8
+  %8 = getelementptr inbounds { i64, i64 }, ptr %_16, i32 0, i32 0
+  %9 = load i64, ptr %8, align 8
+  %10 = getelementptr inbounds { i64, i64 }, ptr %_16, i32 0, i32 1
+  %11 = load i64, ptr %10, align 8, !range !6, !noundef !1
+  %12 = getelementptr inbounds { i64, i64 }, ptr %1, i32 0, i32 0
+  store i64 %9, ptr %12, align 8
+  %13 = getelementptr inbounds { i64, i64 }, ptr %1, i32 0, i32 1
+  store i64 %11, ptr %13, align 8
+  br label %bb7
 
 bb5:                                              ; preds = %bb3
-  %7 = getelementptr inbounds { i64, i64 }, ptr %1, i32 0, i32 1
-  store i64 0, ptr %7, align 8
+  %14 = getelementptr inbounds { i64, i64 }, ptr %1, i32 0, i32 1
+  store i64 0, ptr %14, align 8
   br label %bb7
 
-bb7:                                              ; preds = %bb8, %bb5
-  %8 = getelementptr inbounds { i64, i64 }, ptr %1, i32 0, i32 0
-  %9 = load i64, ptr %8, align 8
-  %10 = getelementptr inbounds { i64, i64 }, ptr %1, i32 0, i32 1
-  %11 = load i64, ptr %10, align 8, !range !7, !noundef !1
-  %12 = insertvalue { i64, i64 } undef, i64 %9, 0
-  %13 = insertvalue { i64, i64 } %12, i64 %11, 1
-  ret { i64, i64 } %13
-
-bb8:                                              ; preds = %bb6
-  store i64 %array_size, ptr %_16, align 8
-  %14 = getelementptr inbounds { i64, i64 }, ptr %_16, i32 0, i32 1
-  store i64 %_33, ptr %14, align 8
-  %15 = getelementptr inbounds { i64, i64 }, ptr %_16, i32 0, i32 0
+bb7:                                              ; preds = %bb6, %bb5
+  %15 = getelementptr inbounds { i64, i64 }, ptr %1, i32 0, i32 0
   %16 = load i64, ptr %15, align 8
-  %17 = getelementptr inbounds { i64, i64 }, ptr %_16, i32 0, i32 1
-  %18 = load i64, ptr %17, align 8, !range !6, !noundef !1
-  %19 = getelementptr inbounds { i64, i64 }, ptr %1, i32 0, i32 0
-  store i64 %16, ptr %19, align 8
-  %20 = getelementptr inbounds { i64, i64 }, ptr %1, i32 0, i32 1
-  store i64 %18, ptr %20, align 8
-  br label %bb7
+  %17 = getelementptr inbounds { i64, i64 }, ptr %1, i32 0, i32 1
+  %18 = load i64, ptr %17, align 8, !range !7, !noundef !1
+  %19 = insertvalue { i64, i64 } undef, i64 %16, 0
+  %20 = insertvalue { i64, i64 } %19, i64 %18, 1
+  ret { i64, i64 } %20
 }
 
 ; core::option::Option<T>::map_or_else
 ; Function Attrs: inlinehint uwtable
-define void @"_ZN4core6option15Option$LT$T$GT$11map_or_else17h1053ce827eafa28dE"(ptr sret(%"alloc::string::String") %0, ptr align 1 %1, i64 %2, ptr align 8 %default) unnamed_addr #0 personality ptr @rust_eh_personality {
+define void @"_ZN4core6option15Option$LT$T$GT$11map_or_else17h7ba4edad16963144E"(ptr sret(%"alloc::string::String") %0, ptr align 1 %1, i64 %2, ptr align 8 %default) unnamed_addr #0 personality ptr @rust_eh_personality {
 start:
   %3 = alloca { ptr, i32 }, align 8
   %_12 = alloca i8, align 1
@@ -540,7 +505,7 @@ start:
 bb1:                                              ; preds = %start
   store i8 0, ptr %_12, align 1
 ; invoke alloc::fmt::format::{{closure}}
-  invoke void @"_ZN5alloc3fmt6format28_$u7b$$u7b$closure$u7d$$u7d$17hc184c38cceda5609E"(ptr sret(%"alloc::string::String") %0, ptr align 8 %default)
+  invoke void @"_ZN5alloc3fmt6format28_$u7b$$u7b$closure$u7d$$u7d$17h5d9ae258f4d962e3E"(ptr sret(%"alloc::string::String") %0, ptr align 8 %default)
           to label %bb5 unwind label %cleanup
 
 bb3:                                              ; preds = %start
@@ -558,7 +523,7 @@ bb3:                                              ; preds = %start
   %16 = getelementptr inbounds { ptr, i64 }, ptr %_7, i32 0, i32 1
   %17 = load i64, ptr %16, align 8
 ; invoke core::ops::function::FnOnce::call_once
-  invoke void @_ZN4core3ops8function6FnOnce9call_once17h9fb134ba3b1debceE(ptr sret(%"alloc::string::String") %0, ptr align 1 %15, i64 %17)
+  invoke void @_ZN4core3ops8function6FnOnce9call_once17hb7c1376be4716d4cE(ptr sret(%"alloc::string::String") %0, ptr align 1 %15, i64 %17)
           to label %bb4 unwind label %cleanup
 
 bb2:                                              ; No predecessors!
@@ -627,7 +592,7 @@ bb12:                                             ; preds = %bb6
 
 ; core::result::Result<T,E>::unwrap_unchecked
 ; Function Attrs: inlinehint uwtable
-define { i64, i64 } @"_ZN4core6result19Result$LT$T$C$E$GT$16unwrap_unchecked17h367eb3b7df6807a7E"(i64 %0, i64 %1, ptr align 8 %2) unnamed_addr #0 personality ptr @rust_eh_personality {
+define { i64, i64 } @"_ZN4core6result19Result$LT$T$C$E$GT$16unwrap_unchecked17h5d0ae51dfc10c8f1E"(i64 %0, i64 %1, ptr align 8 %2) unnamed_addr #0 personality ptr @rust_eh_personality {
 start:
   %3 = alloca { ptr, i32 }, align 8
   %self = alloca { i64, i64 }, align 8
@@ -656,7 +621,7 @@ bb3:                                              ; preds = %start
 
 bb1:                                              ; preds = %start
 ; invoke core::hint::unreachable_unchecked
-  invoke void @_ZN4core4hint21unreachable_unchecked17h06793c1f77b6834cE() #13
+  invoke void @_ZN4core4hint21unreachable_unchecked17hd75f53d2bce5fb2bE() #13
           to label %unreachable unwind label %cleanup
 
 bb2:                                              ; No predecessors!
@@ -712,19 +677,16 @@ bb6:                                              ; preds = %bb3
 
 ; <T as core::convert::Into<U>>::into
 ; Function Attrs: uwtable
-define ptr @"_ZN50_$LT$T$u20$as$u20$core..convert..Into$LT$U$GT$$GT$4into17hccc871fb4bb6e369E"(ptr %self) unnamed_addr #1 {
+define ptr @"_ZN50_$LT$T$u20$as$u20$core..convert..Into$LT$U$GT$$GT$4into17hcfe79700252a3445E"(ptr %self) unnamed_addr #1 {
 start:
 ; call <core::ptr::non_null::NonNull<T> as core::convert::From<core::ptr::unique::Unique<T>>>::from
-  %0 = call ptr @"_ZN119_$LT$core..ptr..non_null..NonNull$LT$T$GT$$u20$as$u20$core..convert..From$LT$core..ptr..unique..Unique$LT$T$GT$$GT$$GT$4from17he983245c24955a58E"(ptr %self)
-  br label %bb1
-
-bb1:                                              ; preds = %start
+  %0 = call ptr @"_ZN119_$LT$core..ptr..non_null..NonNull$LT$T$GT$$u20$as$u20$core..convert..From$LT$core..ptr..unique..Unique$LT$T$GT$$GT$$GT$4from17h20fe4d386d48fe9aE"(ptr %self)
   ret ptr %0
 }
 
 ; <T as alloc::slice::hack::ConvertVec>::to_vec
 ; Function Attrs: inlinehint uwtable
-define void @"_ZN52_$LT$T$u20$as$u20$alloc..slice..hack..ConvertVec$GT$6to_vec17h55f57cd219c68af9E"(ptr sret(%"alloc::vec::Vec<u8>") %v, ptr align 1 %s.0, i64 %s.1) unnamed_addr #0 personality ptr @rust_eh_personality {
+define void @"_ZN52_$LT$T$u20$as$u20$alloc..slice..hack..ConvertVec$GT$6to_vec17h4999d5f19abee1fbE"(ptr sret(%"alloc::vec::Vec<u8>") %v, ptr align 1 %s.0, i64 %s.1) unnamed_addr #0 personality ptr @rust_eh_personality {
 start:
   %0 = alloca { ptr, i32 }, align 8
   %_46 = alloca %"core::ptr::metadata::PtrRepr<[u8]>", align 8
@@ -741,7 +703,7 @@ start:
   %4 = load i8, ptr %_23, align 1, !range !4, !noundef !1
   %5 = trunc i8 %4 to i1
 ; invoke alloc::raw_vec::RawVec<T,A>::allocate_in
-  %6 = invoke { ptr, i64 } @"_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$11allocate_in17hb8515fceb16bd7c5E"(i64 %capacity, i1 zeroext %5)
+  %6 = invoke { i64, ptr } @"_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$11allocate_in17h442c9f2fe1271c52E"(i64 %capacity, i1 zeroext %5)
           to label %bb5 unwind label %cleanup
 
 bb4:                                              ; preds = %bb1, %cleanup
@@ -759,70 +721,71 @@ cleanup:                                          ; preds = %start
   br label %bb4
 
 bb5:                                              ; preds = %start
-  %_19.0 = extractvalue { ptr, i64 } %6, 0
-  %_19.1 = extractvalue { ptr, i64 } %6, 1
-  %12 = getelementptr inbounds { ptr, i64 }, ptr %v, i32 0, i32 0
-  store ptr %_19.0, ptr %12, align 8
-  %13 = getelementptr inbounds { ptr, i64 }, ptr %v, i32 0, i32 1
-  store i64 %_19.1, ptr %13, align 8
+  %_19.0 = extractvalue { i64, ptr } %6, 0
+  %_19.1 = extractvalue { i64, ptr } %6, 1
+  %12 = getelementptr inbounds { i64, ptr }, ptr %v, i32 0, i32 0
+  store i64 %_19.0, ptr %12, align 8
+  %13 = getelementptr inbounds { i64, ptr }, ptr %v, i32 0, i32 1
+  store ptr %_19.1, ptr %13, align 8
   %14 = getelementptr inbounds %"alloc::vec::Vec<u8>", ptr %v, i32 0, i32 1
   store i64 0, ptr %14, align 8
-  %self = load ptr, ptr %v, align 8, !nonnull !1, !noundef !1
+  %15 = getelementptr inbounds { i64, ptr }, ptr %v, i32 0, i32 1
+  %self = load ptr, ptr %15, align 8, !nonnull !1, !noundef !1
 ; invoke core::ptr::mut_ptr::<impl *mut T>::is_null
-  %_28 = invoke zeroext i1 @"_ZN4core3ptr7mut_ptr31_$LT$impl$u20$$BP$mut$u20$T$GT$7is_null17h356abfa90d946053E"(ptr %self)
+  %_28 = invoke zeroext i1 @"_ZN4core3ptr7mut_ptr31_$LT$impl$u20$$BP$mut$u20$T$GT$7is_null17h73f55a6e606b8ca3E"(ptr %self)
           to label %bb6 unwind label %cleanup1
 
 bb1:                                              ; preds = %cleanup1
 ; invoke core::ptr::drop_in_place<alloc::vec::Vec<u8>>
-  invoke void @"_ZN4core3ptr46drop_in_place$LT$alloc..vec..Vec$LT$u8$GT$$GT$17h9c4d631744f32ad6E"(ptr %v) #14
+  invoke void @"_ZN4core3ptr46drop_in_place$LT$alloc..vec..Vec$LT$u8$GT$$GT$17h69b801a17c028ebbE"(ptr %v) #14
           to label %bb4 unwind label %abort
 
 cleanup1:                                         ; preds = %bb5
-  %15 = landingpad { ptr, i32 }
+  %16 = landingpad { ptr, i32 }
           cleanup
-  %16 = extractvalue { ptr, i32 } %15, 0
-  %17 = extractvalue { ptr, i32 } %15, 1
-  %18 = getelementptr inbounds { ptr, i32 }, ptr %0, i32 0, i32 0
-  store ptr %16, ptr %18, align 8
-  %19 = getelementptr inbounds { ptr, i32 }, ptr %0, i32 0, i32 1
-  store i32 %17, ptr %19, align 8
+  %17 = extractvalue { ptr, i32 } %16, 0
+  %18 = extractvalue { ptr, i32 } %16, 1
+  %19 = getelementptr inbounds { ptr, i32 }, ptr %0, i32 0, i32 0
+  store ptr %17, ptr %19, align 8
+  %20 = getelementptr inbounds { ptr, i32 }, ptr %0, i32 0, i32 1
+  store i32 %18, ptr %20, align 8
   br label %bb1
 
 bb6:                                              ; preds = %bb5
   %_27 = xor i1 %_28, true
   call void @llvm.assume(i1 %_27)
-  %20 = getelementptr inbounds { ptr, i64 }, ptr %_34, i32 0, i32 0
-  store ptr %s.0, ptr %20, align 8
-  %21 = getelementptr inbounds { ptr, i64 }, ptr %_34, i32 0, i32 1
-  store i64 %s.1, ptr %21, align 8
+  %21 = getelementptr inbounds { ptr, i64 }, ptr %_34, i32 0, i32 0
+  store ptr %s.0, ptr %21, align 8
   %22 = getelementptr inbounds { ptr, i64 }, ptr %_34, i32 0, i32 1
-  %count = load i64, ptr %22, align 8
-  %23 = mul i64 %count, 1
-  call void @llvm.memcpy.p0.p0.i64(ptr align 1 %self, ptr align 1 %s.0, i64 %23, i1 false)
-  %24 = getelementptr inbounds { ptr, i64 }, ptr %_46, i32 0, i32 0
-  store ptr %s.0, ptr %24, align 8
-  %25 = getelementptr inbounds { ptr, i64 }, ptr %_46, i32 0, i32 1
-  store i64 %s.1, ptr %25, align 8
+  store i64 %s.1, ptr %22, align 8
+  %23 = getelementptr inbounds { ptr, i64 }, ptr %_34, i32 0, i32 1
+  %count = load i64, ptr %23, align 8
+  %24 = mul i64 %count, 1
+  call void @llvm.memcpy.p0.p0.i64(ptr align 1 %self, ptr align 1 %s.0, i64 %24, i1 false)
+  %25 = getelementptr inbounds { ptr, i64 }, ptr %_46, i32 0, i32 0
+  store ptr %s.0, ptr %25, align 8
   %26 = getelementptr inbounds { ptr, i64 }, ptr %_46, i32 0, i32 1
-  %new_len = load i64, ptr %26, align 8
-  %27 = getelementptr inbounds %"alloc::vec::Vec<u8>", ptr %v, i32 0, i32 1
-  store i64 %new_len, ptr %27, align 8
+  store i64 %s.1, ptr %26, align 8
+  %27 = getelementptr inbounds { ptr, i64 }, ptr %_46, i32 0, i32 1
+  %new_len = load i64, ptr %27, align 8
+  %28 = getelementptr inbounds %"alloc::vec::Vec<u8>", ptr %v, i32 0, i32 1
+  store i64 %new_len, ptr %28, align 8
   ret void
 
 abort:                                            ; preds = %bb1
-  %28 = landingpad { ptr, i32 }
+  %29 = landingpad { ptr, i32 }
           cleanup
 ; call core::panicking::panic_no_unwind
-  call void @_ZN4core9panicking15panic_no_unwind17heeace36118a2ef48E() #15
+  call void @_ZN4core9panicking15panic_no_unwind17hb2af643378877ec4E() #15
   unreachable
 
 bb2:                                              ; preds = %bb3, %bb4
-  %29 = load ptr, ptr %0, align 8
-  %30 = getelementptr inbounds { ptr, i32 }, ptr %0, i32 0, i32 1
-  %31 = load i32, ptr %30, align 8
-  %32 = insertvalue { ptr, i32 } undef, ptr %29, 0
-  %33 = insertvalue { ptr, i32 } %32, i32 %31, 1
-  resume { ptr, i32 } %33
+  %30 = load ptr, ptr %0, align 8
+  %31 = getelementptr inbounds { ptr, i32 }, ptr %0, i32 0, i32 1
+  %32 = load i32, ptr %31, align 8
+  %33 = insertvalue { ptr, i32 } undef, ptr %30, 0
+  %34 = insertvalue { ptr, i32 } %33, i32 %32, 1
+  resume { ptr, i32 } %34
 
 bb3:                                              ; preds = %bb4
   br label %bb2
@@ -830,29 +793,23 @@ bb3:                                              ; preds = %bb4
 
 ; alloc::fmt::format
 ; Function Attrs: inlinehint uwtable
-define internal void @_ZN5alloc3fmt6format17hb8beba2ffef0ce03E(ptr sret(%"alloc::string::String") %0, ptr %args) unnamed_addr #0 {
+define internal void @_ZN5alloc3fmt6format17h0c02cbf11e43fdfeE(ptr sret(%"alloc::string::String") %0, ptr %args) unnamed_addr #0 {
 start:
   %_4 = alloca ptr, align 8
 ; call core::fmt::Arguments::as_str
-  %1 = call { ptr, i64 } @_ZN4core3fmt9Arguments6as_str17h5d762534d7d61bbbE(ptr align 8 %args)
+  %1 = call { ptr, i64 } @_ZN4core3fmt9Arguments6as_str17h8ed1097cdc1ea708E(ptr align 8 %args)
   %_2.0 = extractvalue { ptr, i64 } %1, 0
   %_2.1 = extractvalue { ptr, i64 } %1, 1
-  br label %bb1
-
-bb1:                                              ; preds = %start
   store ptr %args, ptr %_4, align 8
   %2 = load ptr, ptr %_4, align 8, !nonnull !1, !align !3, !noundef !1
 ; call core::option::Option<T>::map_or_else
-  call void @"_ZN4core6option15Option$LT$T$GT$11map_or_else17h1053ce827eafa28dE"(ptr sret(%"alloc::string::String") %0, ptr align 1 %_2.0, i64 %_2.1, ptr align 8 %2)
-  br label %bb2
-
-bb2:                                              ; preds = %bb1
+  call void @"_ZN4core6option15Option$LT$T$GT$11map_or_else17h7ba4edad16963144E"(ptr sret(%"alloc::string::String") %0, ptr align 1 %_2.0, i64 %_2.1, ptr align 8 %2)
   ret void
 }
 
 ; alloc::fmt::format::{{closure}}
 ; Function Attrs: inlinehint uwtable
-define void @"_ZN5alloc3fmt6format28_$u7b$$u7b$closure$u7d$$u7d$17hc184c38cceda5609E"(ptr sret(%"alloc::string::String") %0, ptr align 8 %1) unnamed_addr #0 {
+define void @"_ZN5alloc3fmt6format28_$u7b$$u7b$closure$u7d$$u7d$17h5d9ae258f4d962e3E"(ptr sret(%"alloc::string::String") %0, ptr align 8 %1) unnamed_addr #0 {
 start:
   %_2 = alloca %"core::fmt::Arguments<'_>", align 8
   %_1 = alloca ptr, align 8
@@ -860,16 +817,13 @@ start:
   %_3 = load ptr, ptr %_1, align 8, !nonnull !1, !align !3, !noundef !1
   call void @llvm.memcpy.p0.p0.i64(ptr align 8 %_2, ptr align 8 %_3, i64 48, i1 false)
 ; call alloc::fmt::format::format_inner
-  call void @_ZN5alloc3fmt6format12format_inner17h6f19335263367750E(ptr sret(%"alloc::string::String") %0, ptr %_2)
-  br label %bb1
-
-bb1:                                              ; preds = %start
+  call void @_ZN5alloc3fmt6format12format_inner17ha7d7047c27b0a028E(ptr sret(%"alloc::string::String") %0, ptr %_2)
   ret void
 }
 
 ; alloc::str::<impl alloc::borrow::ToOwned for str>::to_owned
 ; Function Attrs: inlinehint uwtable
-define internal void @"_ZN5alloc3str56_$LT$impl$u20$alloc..borrow..ToOwned$u20$for$u20$str$GT$8to_owned17h82e4d5a698511b4aE"(ptr sret(%"alloc::string::String") %0, ptr align 1 %self.0, i64 %self.1) unnamed_addr #0 {
+define internal void @"_ZN5alloc3str56_$LT$impl$u20$alloc..borrow..ToOwned$u20$for$u20$str$GT$8to_owned17hbdc51c8b64364b12E"(ptr sret(%"alloc::string::String") %0, ptr align 1 %self.0, i64 %self.1) unnamed_addr #0 {
 start:
   %1 = alloca { ptr, i64 }, align 8
   %_7 = alloca %"alloc::vec::Vec<u8>", align 8
@@ -882,14 +836,8 @@ start:
   %_4.0 = load ptr, ptr %4, align 8, !nonnull !1, !align !2, !noundef !1
   %5 = getelementptr inbounds { ptr, i64 }, ptr %1, i32 0, i32 1
   %_4.1 = load i64, ptr %5, align 8
-  br label %bb2
-
-bb2:                                              ; preds = %start
 ; call alloc::slice::<impl alloc::borrow::ToOwned for [T]>::to_owned
-  call void @"_ZN5alloc5slice64_$LT$impl$u20$alloc..borrow..ToOwned$u20$for$u20$$u5b$T$u5d$$GT$8to_owned17hd8657114bc4dead5E"(ptr sret(%"alloc::vec::Vec<u8>") %bytes, ptr align 1 %_4.0, i64 %_4.1)
-  br label %bb1
-
-bb1:                                              ; preds = %bb2
+  call void @"_ZN5alloc5slice64_$LT$impl$u20$alloc..borrow..ToOwned$u20$for$u20$$u5b$T$u5d$$GT$8to_owned17h6089359733e3e119E"(ptr sret(%"alloc::vec::Vec<u8>") %bytes, ptr align 1 %_4.0, i64 %_4.1)
   call void @llvm.memcpy.p0.p0.i64(ptr align 8 %_7, ptr align 8 %bytes, i64 24, i1 false)
   call void @llvm.memcpy.p0.p0.i64(ptr align 8 %0, ptr align 8 %_7, i64 24, i1 false)
   ret void
@@ -897,7 +845,7 @@ bb1:                                              ; preds = %bb2
 
 ; alloc::alloc::Global::alloc_impl
 ; Function Attrs: inlinehint uwtable
-define internal { ptr, i64 } @_ZN5alloc5alloc6Global10alloc_impl17h29457070c17e32c0E(ptr align 1 %self, i64 %0, i64 %1, i1 zeroext %zeroed) unnamed_addr #0 {
+define internal { ptr, i64 } @_ZN5alloc5alloc6Global10alloc_impl17h2330fef4654aa7f6E(ptr align 1 %self, i64 %0, i64 %1, i1 zeroext %zeroed) unnamed_addr #0 {
 start:
   %2 = alloca ptr, align 8
   %_93 = alloca { ptr, i64 }, align 8
@@ -937,81 +885,101 @@ bb2:                                              ; preds = %start
   call void @llvm.assume(i1 %_34)
   store i64 %_32, ptr %2, align 8
   %ptr = load ptr, ptr %2, align 8
-  br label %bb13
+  store ptr %ptr, ptr %data, align 8
+  %self9 = load ptr, ptr %data, align 8, !nonnull !1, !noundef !1
+  store ptr %self9, ptr %_51, align 8
+  %8 = getelementptr inbounds { ptr, i64 }, ptr %_51, i32 0, i32 1
+  store i64 0, ptr %8, align 8
+  %9 = getelementptr inbounds { ptr, i64 }, ptr %_51, i32 0, i32 0
+  %10 = load ptr, ptr %9, align 8
+  %11 = getelementptr inbounds { ptr, i64 }, ptr %_51, i32 0, i32 1
+  %12 = load i64, ptr %11, align 8
+  %13 = getelementptr inbounds { ptr, i64 }, ptr %_50, i32 0, i32 0
+  store ptr %10, ptr %13, align 8
+  %14 = getelementptr inbounds { ptr, i64 }, ptr %_50, i32 0, i32 1
+  store i64 %12, ptr %14, align 8
+  %15 = getelementptr inbounds { ptr, i64 }, ptr %_50, i32 0, i32 0
+  %ptr.010 = load ptr, ptr %15, align 8
+  %16 = getelementptr inbounds { ptr, i64 }, ptr %_50, i32 0, i32 1
+  %ptr.111 = load i64, ptr %16, align 8
+  %17 = getelementptr inbounds { ptr, i64 }, ptr %_6, i32 0, i32 0
+  store ptr %ptr.010, ptr %17, align 8
+  %18 = getelementptr inbounds { ptr, i64 }, ptr %_6, i32 0, i32 1
+  store i64 %ptr.111, ptr %18, align 8
+  %19 = getelementptr inbounds { ptr, i64 }, ptr %_6, i32 0, i32 0
+  %20 = load ptr, ptr %19, align 8, !nonnull !1, !noundef !1
+  %21 = getelementptr inbounds { ptr, i64 }, ptr %_6, i32 0, i32 1
+  %22 = load i64, ptr %21, align 8
+  %23 = getelementptr inbounds { ptr, i64 }, ptr %3, i32 0, i32 0
+  store ptr %20, ptr %23, align 8
+  %24 = getelementptr inbounds { ptr, i64 }, ptr %3, i32 0, i32 1
+  store i64 %22, ptr %24, align 8
+  br label %bb11
 
 bb1:                                              ; preds = %start
   br i1 %zeroed, label %bb3, label %bb4
 
 bb4:                                              ; preds = %bb1
-  %8 = getelementptr inbounds { i64, i64 }, ptr %layout, i32 0, i32 0
-  %9 = load i64, ptr %8, align 8
-  %10 = getelementptr inbounds { i64, i64 }, ptr %layout, i32 0, i32 1
-  %11 = load i64, ptr %10, align 8, !range !6, !noundef !1
-  %12 = getelementptr inbounds { i64, i64 }, ptr %layout2, i32 0, i32 0
-  store i64 %9, ptr %12, align 8
-  %13 = getelementptr inbounds { i64, i64 }, ptr %layout2, i32 0, i32 1
-  store i64 %11, ptr %13, align 8
+  %25 = getelementptr inbounds { i64, i64 }, ptr %layout, i32 0, i32 0
+  %26 = load i64, ptr %25, align 8
+  %27 = getelementptr inbounds { i64, i64 }, ptr %layout, i32 0, i32 1
+  %28 = load i64, ptr %27, align 8, !range !6, !noundef !1
+  %29 = getelementptr inbounds { i64, i64 }, ptr %layout2, i32 0, i32 0
+  store i64 %26, ptr %29, align 8
+  %30 = getelementptr inbounds { i64, i64 }, ptr %layout2, i32 0, i32 1
+  store i64 %28, ptr %30, align 8
   %_67 = load i64, ptr %layout2, align 8
-  %14 = getelementptr inbounds { i64, i64 }, ptr %layout2, i32 0, i32 1
-  %self6 = load i64, ptr %14, align 8, !range !6, !noundef !1
+  %31 = getelementptr inbounds { i64, i64 }, ptr %layout2, i32 0, i32 1
+  %self6 = load i64, ptr %31, align 8, !range !6, !noundef !1
   store i64 %self6, ptr %_72, align 8
   %_73 = load i64, ptr %_72, align 8, !range !6, !noundef !1
   %_74 = icmp uge i64 -9223372036854775808, %_73
   call void @llvm.assume(i1 %_74)
   %_75 = icmp ule i64 1, %_73
   call void @llvm.assume(i1 %_75)
-  %15 = call ptr @__rust_alloc(i64 %_67, i64 %_73) #16
-  store ptr %15, ptr %raw_ptr, align 8
-  br label %bb15
+  %32 = call ptr @__rust_alloc(i64 %_67, i64 %_73) #16
+  store ptr %32, ptr %raw_ptr, align 8
+  br label %bb5
 
 bb3:                                              ; preds = %bb1
-  %16 = getelementptr inbounds { i64, i64 }, ptr %layout, i32 0, i32 0
-  %17 = load i64, ptr %16, align 8
-  %18 = getelementptr inbounds { i64, i64 }, ptr %layout, i32 0, i32 1
-  %19 = load i64, ptr %18, align 8, !range !6, !noundef !1
-  %20 = getelementptr inbounds { i64, i64 }, ptr %layout1, i32 0, i32 0
-  store i64 %17, ptr %20, align 8
-  %21 = getelementptr inbounds { i64, i64 }, ptr %layout1, i32 0, i32 1
-  store i64 %19, ptr %21, align 8
+  %33 = getelementptr inbounds { i64, i64 }, ptr %layout, i32 0, i32 0
+  %34 = load i64, ptr %33, align 8
+  %35 = getelementptr inbounds { i64, i64 }, ptr %layout, i32 0, i32 1
+  %36 = load i64, ptr %35, align 8, !range !6, !noundef !1
+  %37 = getelementptr inbounds { i64, i64 }, ptr %layout1, i32 0, i32 0
+  store i64 %34, ptr %37, align 8
+  %38 = getelementptr inbounds { i64, i64 }, ptr %layout1, i32 0, i32 1
+  store i64 %36, ptr %38, align 8
   %_58 = load i64, ptr %layout1, align 8
-  %22 = getelementptr inbounds { i64, i64 }, ptr %layout1, i32 0, i32 1
-  %self5 = load i64, ptr %22, align 8, !range !6, !noundef !1
+  %39 = getelementptr inbounds { i64, i64 }, ptr %layout1, i32 0, i32 1
+  %self5 = load i64, ptr %39, align 8, !range !6, !noundef !1
   store i64 %self5, ptr %_63, align 8
   %_64 = load i64, ptr %_63, align 8, !range !6, !noundef !1
   %_65 = icmp uge i64 -9223372036854775808, %_64
   call void @llvm.assume(i1 %_65)
   %_66 = icmp ule i64 1, %_64
   call void @llvm.assume(i1 %_66)
-  %23 = call ptr @__rust_alloc_zeroed(i64 %_58, i64 %_64) #16
-  store ptr %23, ptr %raw_ptr, align 8
-  br label %bb14
-
-bb14:                                             ; preds = %bb3
+  %40 = call ptr @__rust_alloc_zeroed(i64 %_58, i64 %_64) #16
+  store ptr %40, ptr %raw_ptr, align 8
   br label %bb5
 
-bb5:                                              ; preds = %bb15, %bb14
+bb5:                                              ; preds = %bb4, %bb3
   %_18 = load ptr, ptr %raw_ptr, align 8
 ; call core::ptr::non_null::NonNull<T>::new
-  %24 = call ptr @"_ZN4core3ptr8non_null16NonNull$LT$T$GT$3new17hb65f1a227b0fcd88E"(ptr %_18)
-  store ptr %24, ptr %self4, align 8
-  br label %bb6
+  %41 = call ptr @"_ZN4core3ptr8non_null16NonNull$LT$T$GT$3new17hb55c9a3b469d48bfE"(ptr %_18)
+  store ptr %41, ptr %self4, align 8
+  %42 = load ptr, ptr %self4, align 8
+  %43 = ptrtoint ptr %42 to i64
+  %44 = icmp eq i64 %43, 0
+  %_76 = select i1 %44, i64 0, i64 1
+  %45 = icmp eq i64 %_76, 0
+  br i1 %45, label %bb16, label %bb18
 
-bb15:                                             ; preds = %bb4
-  br label %bb5
-
-bb6:                                              ; preds = %bb5
-  %25 = load ptr, ptr %self4, align 8
-  %26 = ptrtoint ptr %25 to i64
-  %27 = icmp eq i64 %26, 0
-  %_76 = select i1 %27, i64 0, i64 1
-  %28 = icmp eq i64 %_76, 0
-  br i1 %28, label %bb16, label %bb18
-
-bb16:                                             ; preds = %bb6
+bb16:                                             ; preds = %bb5
   store ptr null, ptr %self3, align 8
   br label %bb19
 
-bb18:                                             ; preds = %bb6
+bb18:                                             ; preds = %bb5
   %v = load ptr, ptr %self4, align 8, !nonnull !1, !noundef !1
   store ptr %v, ptr %self3, align 8
   br label %bb19
@@ -1020,12 +988,12 @@ bb17:                                             ; No predecessors!
   unreachable
 
 bb19:                                             ; preds = %bb16, %bb18
-  %29 = load ptr, ptr %self3, align 8
-  %30 = ptrtoint ptr %29 to i64
-  %31 = icmp eq i64 %30, 0
-  %_79 = select i1 %31, i64 1, i64 0
-  %32 = icmp eq i64 %_79, 0
-  br i1 %32, label %bb22, label %bb20
+  %46 = load ptr, ptr %self3, align 8
+  %47 = ptrtoint ptr %46 to i64
+  %48 = icmp eq i64 %47, 0
+  %_79 = select i1 %48, i64 1, i64 0
+  %49 = icmp eq i64 %_79, 0
+  br i1 %49, label %bb22, label %bb20
 
 bb22:                                             ; preds = %bb19
   %v7 = load ptr, ptr %self3, align 8, !nonnull !1, !noundef !1
@@ -1040,42 +1008,42 @@ bb21:                                             ; No predecessors!
   unreachable
 
 bb7:                                              ; preds = %bb22, %bb20
-  %33 = load ptr, ptr %_15, align 8
-  %34 = ptrtoint ptr %33 to i64
-  %35 = icmp eq i64 %34, 0
-  %_20 = select i1 %35, i64 1, i64 0
-  %36 = icmp eq i64 %_20, 0
-  br i1 %36, label %bb8, label %bb10
+  %50 = load ptr, ptr %_15, align 8
+  %51 = ptrtoint ptr %50 to i64
+  %52 = icmp eq i64 %51, 0
+  %_20 = select i1 %52, i64 1, i64 0
+  %53 = icmp eq i64 %_20, 0
+  br i1 %53, label %bb8, label %bb10
 
 bb8:                                              ; preds = %bb7
   %val = load ptr, ptr %_15, align 8, !nonnull !1, !noundef !1
   store ptr %val, ptr %_93, align 8
-  %37 = getelementptr inbounds { ptr, i64 }, ptr %_93, i32 0, i32 1
-  store i64 %_4, ptr %37, align 8
-  %38 = getelementptr inbounds { ptr, i64 }, ptr %_93, i32 0, i32 0
-  %39 = load ptr, ptr %38, align 8
-  %40 = getelementptr inbounds { ptr, i64 }, ptr %_93, i32 0, i32 1
-  %41 = load i64, ptr %40, align 8
-  %42 = getelementptr inbounds { ptr, i64 }, ptr %_92, i32 0, i32 0
-  store ptr %39, ptr %42, align 8
-  %43 = getelementptr inbounds { ptr, i64 }, ptr %_92, i32 0, i32 1
-  store i64 %41, ptr %43, align 8
-  %44 = getelementptr inbounds { ptr, i64 }, ptr %_92, i32 0, i32 0
-  %ptr.0 = load ptr, ptr %44, align 8
-  %45 = getelementptr inbounds { ptr, i64 }, ptr %_92, i32 0, i32 1
-  %ptr.1 = load i64, ptr %45, align 8
-  %46 = getelementptr inbounds { ptr, i64 }, ptr %_24, i32 0, i32 0
-  store ptr %ptr.0, ptr %46, align 8
-  %47 = getelementptr inbounds { ptr, i64 }, ptr %_24, i32 0, i32 1
-  store i64 %ptr.1, ptr %47, align 8
-  %48 = getelementptr inbounds { ptr, i64 }, ptr %_24, i32 0, i32 0
-  %49 = load ptr, ptr %48, align 8, !nonnull !1, !noundef !1
-  %50 = getelementptr inbounds { ptr, i64 }, ptr %_24, i32 0, i32 1
-  %51 = load i64, ptr %50, align 8
-  %52 = getelementptr inbounds { ptr, i64 }, ptr %3, i32 0, i32 0
-  store ptr %49, ptr %52, align 8
-  %53 = getelementptr inbounds { ptr, i64 }, ptr %3, i32 0, i32 1
-  store i64 %51, ptr %53, align 8
+  %54 = getelementptr inbounds { ptr, i64 }, ptr %_93, i32 0, i32 1
+  store i64 %_4, ptr %54, align 8
+  %55 = getelementptr inbounds { ptr, i64 }, ptr %_93, i32 0, i32 0
+  %56 = load ptr, ptr %55, align 8
+  %57 = getelementptr inbounds { ptr, i64 }, ptr %_93, i32 0, i32 1
+  %58 = load i64, ptr %57, align 8
+  %59 = getelementptr inbounds { ptr, i64 }, ptr %_92, i32 0, i32 0
+  store ptr %56, ptr %59, align 8
+  %60 = getelementptr inbounds { ptr, i64 }, ptr %_92, i32 0, i32 1
+  store i64 %58, ptr %60, align 8
+  %61 = getelementptr inbounds { ptr, i64 }, ptr %_92, i32 0, i32 0
+  %ptr.0 = load ptr, ptr %61, align 8
+  %62 = getelementptr inbounds { ptr, i64 }, ptr %_92, i32 0, i32 1
+  %ptr.1 = load i64, ptr %62, align 8
+  %63 = getelementptr inbounds { ptr, i64 }, ptr %_24, i32 0, i32 0
+  store ptr %ptr.0, ptr %63, align 8
+  %64 = getelementptr inbounds { ptr, i64 }, ptr %_24, i32 0, i32 1
+  store i64 %ptr.1, ptr %64, align 8
+  %65 = getelementptr inbounds { ptr, i64 }, ptr %_24, i32 0, i32 0
+  %66 = load ptr, ptr %65, align 8, !nonnull !1, !noundef !1
+  %67 = getelementptr inbounds { ptr, i64 }, ptr %_24, i32 0, i32 1
+  %68 = load i64, ptr %67, align 8
+  %69 = getelementptr inbounds { ptr, i64 }, ptr %3, i32 0, i32 0
+  store ptr %66, ptr %69, align 8
+  %70 = getelementptr inbounds { ptr, i64 }, ptr %3, i32 0, i32 1
+  store i64 %68, ptr %70, align 8
   br label %bb11
 
 bb10:                                             ; preds = %bb7
@@ -1086,65 +1054,30 @@ bb9:                                              ; No predecessors!
   unreachable
 
 bb12:                                             ; preds = %bb11, %bb10
-  %54 = getelementptr inbounds { ptr, i64 }, ptr %3, i32 0, i32 0
-  %55 = load ptr, ptr %54, align 8
-  %56 = getelementptr inbounds { ptr, i64 }, ptr %3, i32 0, i32 1
-  %57 = load i64, ptr %56, align 8
-  %58 = insertvalue { ptr, i64 } undef, ptr %55, 0
-  %59 = insertvalue { ptr, i64 } %58, i64 %57, 1
-  ret { ptr, i64 } %59
-
-bb11:                                             ; preds = %bb13, %bb8
-  br label %bb12
-
-bb13:                                             ; preds = %bb2
-  store ptr %ptr, ptr %data, align 8
-  %self9 = load ptr, ptr %data, align 8, !nonnull !1, !noundef !1
-  store ptr %self9, ptr %_51, align 8
-  %60 = getelementptr inbounds { ptr, i64 }, ptr %_51, i32 0, i32 1
-  store i64 0, ptr %60, align 8
-  %61 = getelementptr inbounds { ptr, i64 }, ptr %_51, i32 0, i32 0
-  %62 = load ptr, ptr %61, align 8
-  %63 = getelementptr inbounds { ptr, i64 }, ptr %_51, i32 0, i32 1
-  %64 = load i64, ptr %63, align 8
-  %65 = getelementptr inbounds { ptr, i64 }, ptr %_50, i32 0, i32 0
-  store ptr %62, ptr %65, align 8
-  %66 = getelementptr inbounds { ptr, i64 }, ptr %_50, i32 0, i32 1
-  store i64 %64, ptr %66, align 8
-  %67 = getelementptr inbounds { ptr, i64 }, ptr %_50, i32 0, i32 0
-  %ptr.010 = load ptr, ptr %67, align 8
-  %68 = getelementptr inbounds { ptr, i64 }, ptr %_50, i32 0, i32 1
-  %ptr.111 = load i64, ptr %68, align 8
-  %69 = getelementptr inbounds { ptr, i64 }, ptr %_6, i32 0, i32 0
-  store ptr %ptr.010, ptr %69, align 8
-  %70 = getelementptr inbounds { ptr, i64 }, ptr %_6, i32 0, i32 1
-  store i64 %ptr.111, ptr %70, align 8
-  %71 = getelementptr inbounds { ptr, i64 }, ptr %_6, i32 0, i32 0
-  %72 = load ptr, ptr %71, align 8, !nonnull !1, !noundef !1
-  %73 = getelementptr inbounds { ptr, i64 }, ptr %_6, i32 0, i32 1
+  %71 = getelementptr inbounds { ptr, i64 }, ptr %3, i32 0, i32 0
+  %72 = load ptr, ptr %71, align 8
+  %73 = getelementptr inbounds { ptr, i64 }, ptr %3, i32 0, i32 1
   %74 = load i64, ptr %73, align 8
-  %75 = getelementptr inbounds { ptr, i64 }, ptr %3, i32 0, i32 0
-  store ptr %72, ptr %75, align 8
-  %76 = getelementptr inbounds { ptr, i64 }, ptr %3, i32 0, i32 1
-  store i64 %74, ptr %76, align 8
-  br label %bb11
+  %75 = insertvalue { ptr, i64 } undef, ptr %72, 0
+  %76 = insertvalue { ptr, i64 } %75, i64 %74, 1
+  ret { ptr, i64 } %76
+
+bb11:                                             ; preds = %bb2, %bb8
+  br label %bb12
 }
 
 ; alloc::slice::<impl alloc::borrow::ToOwned for [T]>::to_owned
 ; Function Attrs: uwtable
-define void @"_ZN5alloc5slice64_$LT$impl$u20$alloc..borrow..ToOwned$u20$for$u20$$u5b$T$u5d$$GT$8to_owned17hd8657114bc4dead5E"(ptr sret(%"alloc::vec::Vec<u8>") %0, ptr align 1 %self.0, i64 %self.1) unnamed_addr #1 {
+define void @"_ZN5alloc5slice64_$LT$impl$u20$alloc..borrow..ToOwned$u20$for$u20$$u5b$T$u5d$$GT$8to_owned17h6089359733e3e119E"(ptr sret(%"alloc::vec::Vec<u8>") %0, ptr align 1 %self.0, i64 %self.1) unnamed_addr #1 {
 start:
 ; call <T as alloc::slice::hack::ConvertVec>::to_vec
-  call void @"_ZN52_$LT$T$u20$as$u20$alloc..slice..hack..ConvertVec$GT$6to_vec17h55f57cd219c68af9E"(ptr sret(%"alloc::vec::Vec<u8>") %0, ptr align 1 %self.0, i64 %self.1)
-  br label %bb1
-
-bb1:                                              ; preds = %start
+  call void @"_ZN52_$LT$T$u20$as$u20$alloc..slice..hack..ConvertVec$GT$6to_vec17h4999d5f19abee1fbE"(ptr sret(%"alloc::vec::Vec<u8>") %0, ptr align 1 %self.0, i64 %self.1)
   ret void
 }
 
 ; alloc::raw_vec::RawVec<T,A>::allocate_in
 ; Function Attrs: uwtable
-define { ptr, i64 } @"_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$11allocate_in17hb8515fceb16bd7c5E"(i64 %capacity, i1 zeroext %0) unnamed_addr #1 personality ptr @rust_eh_personality {
+define { i64, ptr } @"_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$11allocate_in17h442c9f2fe1271c52E"(i64 %capacity, i1 zeroext %0) unnamed_addr #1 personality ptr @rust_eh_personality {
 start:
   %1 = alloca i64, align 8
   %2 = alloca { ptr, i32 }, align 8
@@ -1156,7 +1089,7 @@ start:
   %_14 = alloca { i64, i64 }, align 8
   %_9 = alloca { i64, i64 }, align 8
   %_4 = alloca i8, align 1
-  %3 = alloca { ptr, i64 }, align 8
+  %3 = alloca { i64, ptr }, align 8
   %alloc = alloca %"alloc::alloc::Global", align 1
   %init = alloca i8, align 1
   %4 = zext i1 %0 to i8
@@ -1187,7 +1120,7 @@ bb6:                                              ; preds = %bb3
 bb4:                                              ; preds = %bb3
   store i8 0, ptr %_36, align 1
 ; invoke alloc::raw_vec::RawVec<T,A>::new_in
-  %8 = invoke { ptr, i64 } @"_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$6new_in17h14d38b96221507fbE"()
+  %8 = invoke { i64, ptr } @"_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$6new_in17heeb060ba6677868cE"()
           to label %bb5 unwind label %cleanup
 
 bb25:                                             ; preds = %cleanup
@@ -1207,21 +1140,21 @@ cleanup:                                          ; preds = %bb19, %bb15, %bb13,
   br label %bb25
 
 bb5:                                              ; preds = %bb4
-  store { ptr, i64 } %8, ptr %3, align 8
+  store { i64, ptr } %8, ptr %3, align 8
   br label %bb22
 
 bb22:                                             ; preds = %bb21, %bb5
-  %16 = getelementptr inbounds { ptr, i64 }, ptr %3, i32 0, i32 0
-  %17 = load ptr, ptr %16, align 8, !nonnull !1, !noundef !1
-  %18 = getelementptr inbounds { ptr, i64 }, ptr %3, i32 0, i32 1
-  %19 = load i64, ptr %18, align 8
-  %20 = insertvalue { ptr, i64 } undef, ptr %17, 0
-  %21 = insertvalue { ptr, i64 } %20, i64 %19, 1
-  ret { ptr, i64 } %21
+  %16 = getelementptr inbounds { i64, ptr }, ptr %3, i32 0, i32 0
+  %17 = load i64, ptr %16, align 8
+  %18 = getelementptr inbounds { i64, ptr }, ptr %3, i32 0, i32 1
+  %19 = load ptr, ptr %18, align 8, !nonnull !1, !noundef !1
+  %20 = insertvalue { i64, ptr } undef, i64 %17, 0
+  %21 = insertvalue { i64, ptr } %20, ptr %19, 1
+  ret { i64, ptr } %21
 
 bb27:                                             ; preds = %bb6
 ; invoke core::alloc::layout::Layout::array::inner
-  %22 = invoke { i64, i64 } @_ZN4core5alloc6layout6Layout5array5inner17h9bddee1d86b78746E(i64 1, i64 %_38, i64 %capacity)
+  %22 = invoke { i64, i64 } @_ZN4core5alloc6layout6Layout5array5inner17h75e47bc77aabb9ebE(i64 1, i64 %_38, i64 %capacity)
           to label %bb26 unwind label %cleanup
 
 bb26:                                             ; preds = %bb27
@@ -1249,7 +1182,7 @@ bb9:                                              ; preds = %bb26
 
 bb7:                                              ; preds = %bb26
 ; invoke alloc::raw_vec::capacity_overflow
-  invoke void @_ZN5alloc7raw_vec17capacity_overflow17hb08586a52f4403fbE() #13
+  invoke void @_ZN5alloc7raw_vec17capacity_overflow17h8f43288ad40f5e20E() #13
           to label %unreachable unwind label %cleanup
 
 bb8:                                              ; No predecessors!
@@ -1267,7 +1200,7 @@ bb12:                                             ; preds = %bb9
 
 bb10:                                             ; preds = %bb9
 ; invoke alloc::raw_vec::capacity_overflow
-  invoke void @_ZN5alloc7raw_vec17capacity_overflow17hb08586a52f4403fbE() #13
+  invoke void @_ZN5alloc7raw_vec17capacity_overflow17h8f43288ad40f5e20E() #13
           to label %unreachable unwind label %cleanup
 
 bb11:                                             ; No predecessors!
@@ -1275,12 +1208,12 @@ bb11:                                             ; No predecessors!
 
 bb15:                                             ; preds = %bb12
 ; invoke <alloc::alloc::Global as core::alloc::Allocator>::allocate
-  %37 = invoke { ptr, i64 } @"_ZN63_$LT$alloc..alloc..Global$u20$as$u20$core..alloc..Allocator$GT$8allocate17he3a81a478b72a610E"(ptr align 1 %alloc, i64 %layout.0, i64 %layout.1)
+  %37 = invoke { ptr, i64 } @"_ZN63_$LT$alloc..alloc..Global$u20$as$u20$core..alloc..Allocator$GT$8allocate17h8021911f4f60c986E"(ptr align 1 %alloc, i64 %layout.0, i64 %layout.1)
           to label %bb16 unwind label %cleanup
 
 bb13:                                             ; preds = %bb12
 ; invoke <alloc::alloc::Global as core::alloc::Allocator>::allocate_zeroed
-  %38 = invoke { ptr, i64 } @"_ZN63_$LT$alloc..alloc..Global$u20$as$u20$core..alloc..Allocator$GT$15allocate_zeroed17h2072239b1d73955fE"(ptr align 1 %alloc, i64 %layout.0, i64 %layout.1)
+  %38 = invoke { ptr, i64 } @"_ZN63_$LT$alloc..alloc..Global$u20$as$u20$core..alloc..Allocator$GT$15allocate_zeroed17hdf2e4518dd682443E"(ptr align 1 %alloc, i64 %layout.0, i64 %layout.1)
           to label %bb17 unwind label %cleanup
 
 bb14:                                             ; No predecessors!
@@ -1312,15 +1245,15 @@ bb21:                                             ; preds = %bb18
   store ptr %_53, ptr %_54, align 8
   %45 = load ptr, ptr %_54, align 8, !nonnull !1, !noundef !1
   store ptr %45, ptr %_30, align 8
-  %46 = load ptr, ptr %_30, align 8, !nonnull !1, !noundef !1
-  store ptr %46, ptr %3, align 8
-  %47 = getelementptr inbounds { ptr, i64 }, ptr %3, i32 0, i32 1
-  store i64 %capacity, ptr %47, align 8
+  %46 = getelementptr inbounds { i64, ptr }, ptr %3, i32 0, i32 1
+  %47 = load ptr, ptr %_30, align 8, !nonnull !1, !noundef !1
+  store ptr %47, ptr %46, align 8
+  store i64 %capacity, ptr %3, align 8
   br label %bb22
 
 bb19:                                             ; preds = %bb18
 ; invoke alloc::alloc::handle_alloc_error
-  invoke void @_ZN5alloc5alloc18handle_alloc_error17h3bb11937174795dbE(i64 %layout.0, i64 %layout.1) #13
+  invoke void @_ZN5alloc5alloc18handle_alloc_error17hbe5a34cc6a2c8970E(i64 %layout.0, i64 %layout.1) #13
           to label %unreachable unwind label %cleanup
 
 bb20:                                             ; No predecessors!
@@ -1340,7 +1273,7 @@ bb24:                                             ; preds = %bb25
 
 ; alloc::raw_vec::RawVec<T,A>::current_memory
 ; Function Attrs: uwtable
-define void @"_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$14current_memory17h8f7e739bddd4ba13E"(ptr sret(%"core::option::Option<(core::ptr::non_null::NonNull<u8>, core::alloc::layout::Layout)>") %0, ptr align 8 %self) unnamed_addr #1 {
+define void @"_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$14current_memory17hc4365b0bf425d2b8E"(ptr sret(%"core::option::Option<(core::ptr::non_null::NonNull<u8>, core::alloc::layout::Layout)>") %0, ptr align 8 %self) unnamed_addr #1 {
 start:
   %1 = alloca i64, align 8
   %pointer = alloca ptr, align 8
@@ -1350,11 +1283,10 @@ start:
   br i1 false, label %bb1, label %bb2
 
 bb2:                                              ; preds = %start
-  %2 = getelementptr inbounds { ptr, i64 }, ptr %self, i32 0, i32 1
-  %_4 = load i64, ptr %2, align 8
+  %_4 = load i64, ptr %self, align 8
   %_3 = icmp eq i64 %_4, 0
-  %3 = zext i1 %_3 to i8
-  store i8 %3, ptr %_2, align 1
+  %2 = zext i1 %_3 to i8
+  store i8 %2, ptr %_2, align 1
   br label %bb3
 
 bb1:                                              ; preds = %start
@@ -1362,69 +1294,57 @@ bb1:                                              ; preds = %start
   br label %bb3
 
 bb3:                                              ; preds = %bb2, %bb1
-  %4 = load i8, ptr %_2, align 1, !range !4, !noundef !1
-  %5 = trunc i8 %4 to i1
-  br i1 %5, label %bb4, label %bb5
+  %3 = load i8, ptr %_2, align 1, !range !4, !noundef !1
+  %4 = trunc i8 %3 to i1
+  br i1 %4, label %bb4, label %bb5
 
 bb5:                                              ; preds = %bb3
-  %6 = getelementptr inbounds { ptr, i64 }, ptr %self, i32 0, i32 1
-  %n = load i64, ptr %6, align 8
+  %n = load i64, ptr %self, align 8
   store i64 1, ptr %1, align 8
   %_14 = load i64, ptr %1, align 8, !range !6, !noundef !1
-  br label %bb10
-
-bb4:                                              ; preds = %bb3
-  %7 = getelementptr inbounds %"core::option::Option<(core::ptr::non_null::NonNull<u8>, core::alloc::layout::Layout)>", ptr %0, i32 0, i32 1
-  store i64 0, ptr %7, align 8
-  br label %bb8
-
-bb8:                                              ; preds = %bb7, %bb4
-  ret void
-
-bb10:                                             ; preds = %bb5
 ; call core::alloc::layout::Layout::array::inner
-  %8 = call { i64, i64 } @_ZN4core5alloc6layout6Layout5array5inner17h9bddee1d86b78746E(i64 1, i64 %_14, i64 %n)
-  %_6.0 = extractvalue { i64, i64 } %8, 0
-  %_6.1 = extractvalue { i64, i64 } %8, 1
-  br label %bb9
-
-bb9:                                              ; preds = %bb10
+  %5 = call { i64, i64 } @_ZN4core5alloc6layout6Layout5array5inner17h75e47bc77aabb9ebE(i64 1, i64 %_14, i64 %n)
+  %_6.0 = extractvalue { i64, i64 } %5, 0
+  %_6.1 = extractvalue { i64, i64 } %5, 1
 ; call core::result::Result<T,E>::unwrap_unchecked
-  %9 = call { i64, i64 } @"_ZN4core6result19Result$LT$T$C$E$GT$16unwrap_unchecked17h367eb3b7df6807a7E"(i64 %_6.0, i64 %_6.1, ptr align 8 @alloc106)
-  %layout.0 = extractvalue { i64, i64 } %9, 0
-  %layout.1 = extractvalue { i64, i64 } %9, 1
-  br label %bb6
-
-bb6:                                              ; preds = %bb9
-  %self1 = load ptr, ptr %self, align 8, !nonnull !1, !noundef !1
+  %6 = call { i64, i64 } @"_ZN4core6result19Result$LT$T$C$E$GT$16unwrap_unchecked17h5d0ae51dfc10c8f1E"(i64 %_6.0, i64 %_6.1, ptr align 8 @alloc106)
+  %layout.0 = extractvalue { i64, i64 } %6, 0
+  %layout.1 = extractvalue { i64, i64 } %6, 1
+  %7 = getelementptr inbounds { i64, ptr }, ptr %self, i32 0, i32 1
+  %self1 = load ptr, ptr %7, align 8, !nonnull !1, !noundef !1
   store ptr %self1, ptr %pointer, align 8
   %_31 = load ptr, ptr %pointer, align 8, !nonnull !1, !noundef !1
   store ptr %_31, ptr %_10, align 8
-  %10 = load ptr, ptr %_10, align 8, !nonnull !1, !noundef !1
+  %8 = load ptr, ptr %_10, align 8, !nonnull !1, !noundef !1
 ; call <T as core::convert::Into<U>>::into
-  %_9 = call ptr @"_ZN50_$LT$T$u20$as$u20$core..convert..Into$LT$U$GT$$GT$4into17hccc871fb4bb6e369E"(ptr %10)
-  br label %bb7
-
-bb7:                                              ; preds = %bb6
+  %_9 = call ptr @"_ZN50_$LT$T$u20$as$u20$core..convert..Into$LT$U$GT$$GT$4into17hcfe79700252a3445E"(ptr %8)
   store ptr %_9, ptr %_8, align 8
-  %11 = getelementptr inbounds { ptr, { i64, i64 } }, ptr %_8, i32 0, i32 1
-  %12 = getelementptr inbounds { i64, i64 }, ptr %11, i32 0, i32 0
-  store i64 %layout.0, ptr %12, align 8
-  %13 = getelementptr inbounds { i64, i64 }, ptr %11, i32 0, i32 1
-  store i64 %layout.1, ptr %13, align 8
+  %9 = getelementptr inbounds { ptr, { i64, i64 } }, ptr %_8, i32 0, i32 1
+  %10 = getelementptr inbounds { i64, i64 }, ptr %9, i32 0, i32 0
+  store i64 %layout.0, ptr %10, align 8
+  %11 = getelementptr inbounds { i64, i64 }, ptr %9, i32 0, i32 1
+  store i64 %layout.1, ptr %11, align 8
   call void @llvm.memcpy.p0.p0.i64(ptr align 8 %0, ptr align 8 %_8, i64 24, i1 false)
   br label %bb8
+
+bb4:                                              ; preds = %bb3
+  %12 = getelementptr inbounds %"core::option::Option<(core::ptr::non_null::NonNull<u8>, core::alloc::layout::Layout)>", ptr %0, i32 0, i32 1
+  store i64 0, ptr %12, align 8
+  br label %bb8
+
+bb8:                                              ; preds = %bb5, %bb4
+  ret void
 }
 
 ; alloc::raw_vec::RawVec<T,A>::new_in
 ; Function Attrs: uwtable
-define { ptr, i64 } @"_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$6new_in17h14d38b96221507fbE"() unnamed_addr #1 personality ptr @rust_eh_personality {
+define { i64, ptr } @"_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$6new_in17heeb060ba6677868cE"() unnamed_addr #1 personality ptr @rust_eh_personality {
 start:
   %0 = alloca { ptr, i32 }, align 8
   %1 = alloca ptr, align 8
   %pointer = alloca ptr, align 8
   %_2 = alloca ptr, align 8
-  %2 = alloca { ptr, i64 }, align 8
+  %2 = alloca { i64, ptr }, align 8
   store i64 1, ptr %1, align 8
   %ptr = load ptr, ptr %1, align 8
   br label %bb3
@@ -1433,22 +1353,19 @@ bb3:                                              ; preds = %start
   store ptr %ptr, ptr %pointer, align 8
   %_13 = load ptr, ptr %pointer, align 8, !nonnull !1, !noundef !1
   store ptr %_13, ptr %_2, align 8
-  %3 = load ptr, ptr %_2, align 8, !nonnull !1, !noundef !1
-  store ptr %3, ptr %2, align 8
-  %4 = getelementptr inbounds { ptr, i64 }, ptr %2, i32 0, i32 1
-  store i64 0, ptr %4, align 8
-  %5 = getelementptr inbounds { ptr, i64 }, ptr %2, i32 0, i32 0
-  %6 = load ptr, ptr %5, align 8, !nonnull !1, !noundef !1
-  %7 = getelementptr inbounds { ptr, i64 }, ptr %2, i32 0, i32 1
-  %8 = load i64, ptr %7, align 8
-  %9 = insertvalue { ptr, i64 } undef, ptr %6, 0
-  %10 = insertvalue { ptr, i64 } %9, i64 %8, 1
-  ret { ptr, i64 } %10
+  %3 = getelementptr inbounds { i64, ptr }, ptr %2, i32 0, i32 1
+  %4 = load ptr, ptr %_2, align 8, !nonnull !1, !noundef !1
+  store ptr %4, ptr %3, align 8
+  store i64 0, ptr %2, align 8
+  %5 = getelementptr inbounds { i64, ptr }, ptr %2, i32 0, i32 0
+  %6 = load i64, ptr %5, align 8
+  %7 = getelementptr inbounds { i64, ptr }, ptr %2, i32 0, i32 1
+  %8 = load ptr, ptr %7, align 8, !nonnull !1, !noundef !1
+  %9 = insertvalue { i64, ptr } undef, i64 %6, 0
+  %10 = insertvalue { i64, ptr } %9, ptr %8, 1
+  ret { i64, ptr } %10
 
 bb1:                                              ; No predecessors!
-  br label %bb2
-
-bb2:                                              ; preds = %bb1
   %11 = load ptr, ptr %0, align 8
   %12 = getelementptr inbounds { ptr, i32 }, ptr %0, i32 0, i32 1
   %13 = load i32, ptr %12, align 8
@@ -1459,7 +1376,7 @@ bb2:                                              ; preds = %bb1
 
 ; <alloc::alloc::Global as core::alloc::Allocator>::deallocate
 ; Function Attrs: inlinehint uwtable
-define internal void @"_ZN63_$LT$alloc..alloc..Global$u20$as$u20$core..alloc..Allocator$GT$10deallocate17h9a3c1624549df7a5E"(ptr align 1 %self, ptr %ptr, i64 %0, i64 %1) unnamed_addr #0 {
+define internal void @"_ZN63_$LT$alloc..alloc..Global$u20$as$u20$core..alloc..Allocator$GT$10deallocate17he4aafadae911283cE"(ptr align 1 %self, ptr %ptr, i64 %0, i64 %1) unnamed_addr #0 {
 start:
   %_16 = alloca i64, align 8
   %layout1 = alloca { i64, i64 }, align 8
@@ -1494,26 +1411,20 @@ bb1:                                              ; preds = %start
   %_19 = icmp ule i64 1, %_17
   call void @llvm.assume(i1 %_19)
   call void @__rust_dealloc(ptr %ptr, i64 %_11, i64 %_17) #16
-  br label %bb4
-
-bb4:                                              ; preds = %bb1
   br label %bb3
 
-bb3:                                              ; preds = %bb2, %bb4
+bb3:                                              ; preds = %bb2, %bb1
   ret void
 }
 
 ; <alloc::alloc::Global as core::alloc::Allocator>::allocate_zeroed
 ; Function Attrs: inlinehint uwtable
-define internal { ptr, i64 } @"_ZN63_$LT$alloc..alloc..Global$u20$as$u20$core..alloc..Allocator$GT$15allocate_zeroed17h2072239b1d73955fE"(ptr align 1 %self, i64 %layout.0, i64 %layout.1) unnamed_addr #0 {
+define internal { ptr, i64 } @"_ZN63_$LT$alloc..alloc..Global$u20$as$u20$core..alloc..Allocator$GT$15allocate_zeroed17hdf2e4518dd682443E"(ptr align 1 %self, i64 %layout.0, i64 %layout.1) unnamed_addr #0 {
 start:
 ; call alloc::alloc::Global::alloc_impl
-  %0 = call { ptr, i64 } @_ZN5alloc5alloc6Global10alloc_impl17h29457070c17e32c0E(ptr align 1 %self, i64 %layout.0, i64 %layout.1, i1 zeroext true)
+  %0 = call { ptr, i64 } @_ZN5alloc5alloc6Global10alloc_impl17h2330fef4654aa7f6E(ptr align 1 %self, i64 %layout.0, i64 %layout.1, i1 zeroext true)
   %1 = extractvalue { ptr, i64 } %0, 0
   %2 = extractvalue { ptr, i64 } %0, 1
-  br label %bb1
-
-bb1:                                              ; preds = %start
   %3 = insertvalue { ptr, i64 } undef, ptr %1, 0
   %4 = insertvalue { ptr, i64 } %3, i64 %2, 1
   ret { ptr, i64 } %4
@@ -1521,15 +1432,12 @@ bb1:                                              ; preds = %start
 
 ; <alloc::alloc::Global as core::alloc::Allocator>::allocate
 ; Function Attrs: inlinehint uwtable
-define internal { ptr, i64 } @"_ZN63_$LT$alloc..alloc..Global$u20$as$u20$core..alloc..Allocator$GT$8allocate17he3a81a478b72a610E"(ptr align 1 %self, i64 %layout.0, i64 %layout.1) unnamed_addr #0 {
+define internal { ptr, i64 } @"_ZN63_$LT$alloc..alloc..Global$u20$as$u20$core..alloc..Allocator$GT$8allocate17h8021911f4f60c986E"(ptr align 1 %self, i64 %layout.0, i64 %layout.1) unnamed_addr #0 {
 start:
 ; call alloc::alloc::Global::alloc_impl
-  %0 = call { ptr, i64 } @_ZN5alloc5alloc6Global10alloc_impl17h29457070c17e32c0E(ptr align 1 %self, i64 %layout.0, i64 %layout.1, i1 zeroext false)
+  %0 = call { ptr, i64 } @_ZN5alloc5alloc6Global10alloc_impl17h2330fef4654aa7f6E(ptr align 1 %self, i64 %layout.0, i64 %layout.1, i1 zeroext false)
   %1 = extractvalue { ptr, i64 } %0, 0
   %2 = extractvalue { ptr, i64 } %0, 1
-  br label %bb1
-
-bb1:                                              ; preds = %start
   %3 = insertvalue { ptr, i64 } undef, ptr %1, 0
   %4 = insertvalue { ptr, i64 } %3, i64 %2, 1
   ret { ptr, i64 } %4
@@ -1537,51 +1445,43 @@ bb1:                                              ; preds = %start
 
 ; <alloc::vec::Vec<T,A> as core::ops::drop::Drop>::drop
 ; Function Attrs: uwtable
-define void @"_ZN70_$LT$alloc..vec..Vec$LT$T$C$A$GT$$u20$as$u20$core..ops..drop..Drop$GT$4drop17h2073511d2d92b55fE"(ptr align 8 %self) unnamed_addr #1 {
+define void @"_ZN70_$LT$alloc..vec..Vec$LT$T$C$A$GT$$u20$as$u20$core..ops..drop..Drop$GT$4drop17hf4466f8ed3987765E"(ptr align 8 %self) unnamed_addr #1 {
 start:
   %_18 = alloca { ptr, i64 }, align 8
   %_17 = alloca %"core::ptr::metadata::PtrRepr<[u8]>", align 8
-  %self1 = load ptr, ptr %self, align 8, !nonnull !1, !noundef !1
+  %0 = getelementptr inbounds { i64, ptr }, ptr %self, i32 0, i32 1
+  %self1 = load ptr, ptr %0, align 8, !nonnull !1, !noundef !1
 ; call core::ptr::mut_ptr::<impl *mut T>::is_null
-  %_8 = call zeroext i1 @"_ZN4core3ptr7mut_ptr31_$LT$impl$u20$$BP$mut$u20$T$GT$7is_null17h356abfa90d946053E"(ptr %self1)
-  br label %bb2
-
-bb2:                                              ; preds = %start
+  %_8 = call zeroext i1 @"_ZN4core3ptr7mut_ptr31_$LT$impl$u20$$BP$mut$u20$T$GT$7is_null17h73f55a6e606b8ca3E"(ptr %self1)
   %_7 = xor i1 %_8, true
   call void @llvm.assume(i1 %_7)
-  %0 = getelementptr inbounds %"alloc::vec::Vec<u8>", ptr %self, i32 0, i32 1
-  %len = load i64, ptr %0, align 8
+  %1 = getelementptr inbounds %"alloc::vec::Vec<u8>", ptr %self, i32 0, i32 1
+  %len = load i64, ptr %1, align 8
   store ptr %self1, ptr %_18, align 8
-  %1 = getelementptr inbounds { ptr, i64 }, ptr %_18, i32 0, i32 1
-  store i64 %len, ptr %1, align 8
-  %2 = getelementptr inbounds { ptr, i64 }, ptr %_18, i32 0, i32 0
-  %3 = load ptr, ptr %2, align 8
-  %4 = getelementptr inbounds { ptr, i64 }, ptr %_18, i32 0, i32 1
-  %5 = load i64, ptr %4, align 8
-  %6 = getelementptr inbounds { ptr, i64 }, ptr %_17, i32 0, i32 0
-  store ptr %3, ptr %6, align 8
-  %7 = getelementptr inbounds { ptr, i64 }, ptr %_17, i32 0, i32 1
-  store i64 %5, ptr %7, align 8
-  %8 = getelementptr inbounds { ptr, i64 }, ptr %_17, i32 0, i32 0
-  %_2.0 = load ptr, ptr %8, align 8
-  %9 = getelementptr inbounds { ptr, i64 }, ptr %_17, i32 0, i32 1
-  %_2.1 = load i64, ptr %9, align 8
-  br label %bb1
-
-bb1:                                              ; preds = %bb2
+  %2 = getelementptr inbounds { ptr, i64 }, ptr %_18, i32 0, i32 1
+  store i64 %len, ptr %2, align 8
+  %3 = getelementptr inbounds { ptr, i64 }, ptr %_18, i32 0, i32 0
+  %4 = load ptr, ptr %3, align 8
+  %5 = getelementptr inbounds { ptr, i64 }, ptr %_18, i32 0, i32 1
+  %6 = load i64, ptr %5, align 8
+  %7 = getelementptr inbounds { ptr, i64 }, ptr %_17, i32 0, i32 0
+  store ptr %4, ptr %7, align 8
+  %8 = getelementptr inbounds { ptr, i64 }, ptr %_17, i32 0, i32 1
+  store i64 %6, ptr %8, align 8
+  %9 = getelementptr inbounds { ptr, i64 }, ptr %_17, i32 0, i32 0
+  %_2.0 = load ptr, ptr %9, align 8
+  %10 = getelementptr inbounds { ptr, i64 }, ptr %_17, i32 0, i32 1
+  %_2.1 = load i64, ptr %10, align 8
   ret void
 }
 
 ; <alloc::raw_vec::RawVec<T,A> as core::ops::drop::Drop>::drop
 ; Function Attrs: uwtable
-define void @"_ZN77_$LT$alloc..raw_vec..RawVec$LT$T$C$A$GT$$u20$as$u20$core..ops..drop..Drop$GT$4drop17h0fced5f99a65019bE"(ptr align 8 %self) unnamed_addr #1 {
+define void @"_ZN77_$LT$alloc..raw_vec..RawVec$LT$T$C$A$GT$$u20$as$u20$core..ops..drop..Drop$GT$4drop17h1c07975c4a5822bcE"(ptr align 8 %self) unnamed_addr #1 {
 start:
   %_2 = alloca %"core::option::Option<(core::ptr::non_null::NonNull<u8>, core::alloc::layout::Layout)>", align 8
 ; call alloc::raw_vec::RawVec<T,A>::current_memory
-  call void @"_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$14current_memory17h8f7e739bddd4ba13E"(ptr sret(%"core::option::Option<(core::ptr::non_null::NonNull<u8>, core::alloc::layout::Layout)>") %_2, ptr align 8 %self)
-  br label %bb1
-
-bb1:                                              ; preds = %start
+  call void @"_ZN5alloc7raw_vec19RawVec$LT$T$C$A$GT$14current_memory17hc4365b0bf425d2b8E"(ptr sret(%"core::option::Option<(core::ptr::non_null::NonNull<u8>, core::alloc::layout::Layout)>") %_2, ptr align 8 %self)
   %0 = getelementptr inbounds %"core::option::Option<(core::ptr::non_null::NonNull<u8>, core::alloc::layout::Layout)>", ptr %_2, i32 0, i32 1
   %1 = load i64, ptr %0, align 8, !range !7, !noundef !1
   %2 = icmp eq i64 %1, 0
@@ -1589,7 +1489,7 @@ bb1:                                              ; preds = %start
   %3 = icmp eq i64 %_4, 1
   br i1 %3, label %bb2, label %bb4
 
-bb2:                                              ; preds = %bb1
+bb2:                                              ; preds = %start
   %ptr = load ptr, ptr %_2, align 8, !nonnull !1, !noundef !1
   %4 = getelementptr inbounds { ptr, { i64, i64 } }, ptr %_2, i32 0, i32 1
   %5 = getelementptr inbounds { i64, i64 }, ptr %4, i32 0, i32 0
@@ -1597,69 +1497,54 @@ bb2:                                              ; preds = %bb1
   %6 = getelementptr inbounds { i64, i64 }, ptr %4, i32 0, i32 1
   %layout.1 = load i64, ptr %6, align 8, !range !6, !noundef !1
 ; call <alloc::alloc::Global as core::alloc::Allocator>::deallocate
-  call void @"_ZN63_$LT$alloc..alloc..Global$u20$as$u20$core..alloc..Allocator$GT$10deallocate17h9a3c1624549df7a5E"(ptr align 1 %self, ptr %ptr, i64 %layout.0, i64 %layout.1)
-  br label %bb3
-
-bb4:                                              ; preds = %bb3, %bb1
-  ret void
-
-bb3:                                              ; preds = %bb2
+  call void @"_ZN63_$LT$alloc..alloc..Global$u20$as$u20$core..alloc..Allocator$GT$10deallocate17he4aafadae911283cE"(ptr align 1 %self, ptr %ptr, i64 %layout.0, i64 %layout.1)
   br label %bb4
+
+bb4:                                              ; preds = %bb2, %start
+  ret void
 }
 
 ; probe1::probe
 ; Function Attrs: uwtable
-define void @_ZN6probe15probe17h02707281bc1914e5E() unnamed_addr #1 {
+define void @_ZN6probe15probe17hd5678750c8f65c76E() unnamed_addr #1 {
 start:
   %_10 = alloca [1 x { ptr, ptr }], align 8
   %_3 = alloca %"core::fmt::Arguments<'_>", align 8
   %res = alloca %"alloc::string::String", align 8
   %_1 = alloca %"alloc::string::String", align 8
 ; call core::fmt::ArgumentV1::new_lower_exp
-  %0 = call { ptr, ptr } @_ZN4core3fmt10ArgumentV113new_lower_exp17hdf38f6a39318ccefE(ptr align 8 @alloc6)
+  %0 = call { ptr, ptr } @_ZN4core3fmt10ArgumentV113new_lower_exp17h81ace772236e0cc6E(ptr align 8 @alloc6)
   %_11.0 = extractvalue { ptr, ptr } %0, 0
   %_11.1 = extractvalue { ptr, ptr } %0, 1
-  br label %bb1
-
-bb1:                                              ; preds = %start
   %1 = getelementptr inbounds [1 x { ptr, ptr }], ptr %_10, i64 0, i64 0
   %2 = getelementptr inbounds { ptr, ptr }, ptr %1, i32 0, i32 0
   store ptr %_11.0, ptr %2, align 8
   %3 = getelementptr inbounds { ptr, ptr }, ptr %1, i32 0, i32 1
   store ptr %_11.1, ptr %3, align 8
 ; call core::fmt::Arguments::new_v1
-  call void @_ZN4core3fmt9Arguments6new_v117hec785e9687d1aeafE(ptr sret(%"core::fmt::Arguments<'_>") %_3, ptr align 8 @alloc4, i64 1, ptr align 8 %_10, i64 1)
-  br label %bb2
-
-bb2:                                              ; preds = %bb1
+  call void @_ZN4core3fmt9Arguments6new_v117h54897e25400540adE(ptr sret(%"core::fmt::Arguments<'_>") %_3, ptr align 8 @alloc4, i64 1, ptr align 8 %_10, i64 1)
 ; call alloc::fmt::format
-  call void @_ZN5alloc3fmt6format17hb8beba2ffef0ce03E(ptr sret(%"alloc::string::String") %res, ptr %_3)
-  br label %bb3
-
-bb3:                                              ; preds = %bb2
+  call void @_ZN5alloc3fmt6format17h0c02cbf11e43fdfeE(ptr sret(%"alloc::string::String") %res, ptr %_3)
   call void @llvm.memcpy.p0.p0.i64(ptr align 8 %_1, ptr align 8 %res, i64 24, i1 false)
 ; call core::ptr::drop_in_place<alloc::string::String>
-  call void @"_ZN4core3ptr42drop_in_place$LT$alloc..string..String$GT$17h20b0217781c968e6E"(ptr %_1)
-  br label %bb4
-
-bb4:                                              ; preds = %bb3
+  call void @"_ZN4core3ptr42drop_in_place$LT$alloc..string..String$GT$17h8463d1610be08497E"(ptr %_1)
   ret void
 }
 
 ; core::fmt::num::imp::<impl core::fmt::LowerExp for isize>::fmt
 ; Function Attrs: uwtable
-declare zeroext i1 @"_ZN4core3fmt3num3imp55_$LT$impl$u20$core..fmt..LowerExp$u20$for$u20$isize$GT$3fmt17hed033f4b1998ee94E"(ptr align 8, ptr align 8) unnamed_addr #1
+declare zeroext i1 @"_ZN4core3fmt3num3imp55_$LT$impl$u20$core..fmt..LowerExp$u20$for$u20$isize$GT$3fmt17h1d1adbde218b2036E"(ptr align 8, ptr align 8) unnamed_addr #1
 
 ; core::panicking::panic_fmt
 ; Function Attrs: cold noinline noreturn uwtable
-declare void @_ZN4core9panicking9panic_fmt17h58b5b343cb8247a1E(ptr, ptr align 8) unnamed_addr #3
+declare void @_ZN4core9panicking9panic_fmt17h360a460986665a92E(ptr, ptr align 8) unnamed_addr #3
 
 ; Function Attrs: uwtable
 declare i32 @rust_eh_personality(i32, i32, i64, ptr, ptr) unnamed_addr #1
 
 ; core::panicking::panic_no_unwind
 ; Function Attrs: cold noinline noreturn nounwind uwtable
-declare void @_ZN4core9panicking15panic_no_unwind17heeace36118a2ef48E() unnamed_addr #4
+declare void @_ZN4core9panicking15panic_no_unwind17hb2af643378877ec4E() unnamed_addr #4
 
 ; Function Attrs: argmemonly nocallback nofree nounwind willreturn
 declare void @llvm.memcpy.p0.p0.i64(ptr noalias nocapture writeonly, ptr noalias nocapture readonly, i64, i1 immarg) #5
@@ -1672,11 +1557,11 @@ declare i1 @llvm.expect.i1(i1, i1) #7
 
 ; core::panicking::panic
 ; Function Attrs: cold noinline noreturn uwtable
-declare void @_ZN4core9panicking5panic17h5230efa25d74f7e9E(ptr align 1, i64, ptr align 8) unnamed_addr #3
+declare void @_ZN4core9panicking5panic17h4fcc8f4e1e044b62E(ptr align 1, i64, ptr align 8) unnamed_addr #3
 
 ; alloc::fmt::format::format_inner
 ; Function Attrs: uwtable
-declare void @_ZN5alloc3fmt6format12format_inner17h6f19335263367750E(ptr sret(%"alloc::string::String"), ptr) unnamed_addr #1
+declare void @_ZN5alloc3fmt6format12format_inner17ha7d7047c27b0a028E(ptr sret(%"alloc::string::String"), ptr) unnamed_addr #1
 
 ; Function Attrs: nounwind allockind("alloc,zeroed,aligned") allocsize(0) uwtable
 declare noalias ptr @__rust_alloc_zeroed(i64, i64 allocalign) unnamed_addr #8
@@ -1686,11 +1571,11 @@ declare noalias ptr @__rust_alloc(i64, i64 allocalign) unnamed_addr #9
 
 ; alloc::raw_vec::capacity_overflow
 ; Function Attrs: noreturn uwtable
-declare void @_ZN5alloc7raw_vec17capacity_overflow17hb08586a52f4403fbE() unnamed_addr #10
+declare void @_ZN5alloc7raw_vec17capacity_overflow17h8f43288ad40f5e20E() unnamed_addr #10
 
 ; alloc::alloc::handle_alloc_error
 ; Function Attrs: cold noreturn uwtable
-declare void @_ZN5alloc5alloc18handle_alloc_error17h3bb11937174795dbE(i64, i64) unnamed_addr #11
+declare void @_ZN5alloc5alloc18handle_alloc_error17hbe5a34cc6a2c8970E(i64, i64) unnamed_addr #11
 
 ; Function Attrs: nounwind allockind("free") uwtable
 declare void @__rust_dealloc(ptr allocptr, i64, i64) unnamed_addr #12
