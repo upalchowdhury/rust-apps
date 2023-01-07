@@ -1,0 +1,3 @@
+In this example, we have a GossipNetwork struct that contains a mapping of Node names to Node objects. Each Node has a name, a list of gossip messages it has received, and a list of connections to other nodes in the network. The GossipNetwork has methods for adding nodes and connections, and for spreading gossip through the network.
+
+To spread gossip, the spread_gossip method adds the message to the source node's list of gossip and then spreads the message to all of the node's connections by adding it to their list of gossip as well.
